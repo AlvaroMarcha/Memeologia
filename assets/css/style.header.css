@@ -1,0 +1,143 @@
+@import url(global.css);
+/* AQUI EL HEADER */
+
+/* Mobile */
+
+header {
+    grid-area: header;
+
+    display: block;
+    width: 100%;
+    height: max-content;
+    margin: auto;
+
+    background-color: rgba(240, 248, 255, 0);
+
+}
+
+.menuB {
+    display: block;
+    width: max-content;
+    height: max-content;
+    margin: auto;
+    background-color: rgba(255, 0, 0, 0);
+    border: none;
+
+}
+
+#nav-links {
+    display: block;
+    width: 100%;
+    height: max-content;
+
+    background-color: rgba(0, 0, 0, 0);
+
+    position: absolute;
+    top: -100%;
+
+    transition: all 0.5s ease;
+
+}
+
+#nav-links-desktop{
+    display: none;
+
+}
+
+#nav-links a {
+    display: block;
+    width: 100%;
+    height: 60px;
+    margin: auto;
+    text-align: center;
+    padding-top: 20px;
+    text-decoration: none;
+
+    position: relative;
+    top: 0px;
+
+
+    opacity: 0;
+
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(0, 162, 255);
+
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#nav-links a:last-child {
+    opacity: 0;
+    margin-bottom: 30px;
+
+
+}
+
+
+
+/* Otras resoluciones - Desktop */
+@media (min-width:860px) {
+    header {
+        grid-area: header;
+    
+        display: block;
+        width: 100%;
+        height: 70px;
+        margin: auto;
+    
+        background-color: rgba(240, 248, 255, 0);
+    
+    }
+
+    .menuB {
+        display: none;
+
+    }
+
+    #nav-links {
+        display: none;
+    
+    }
+
+    #nav-links-desktop{
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    
+
+        width: 45%;
+        height: 70px;
+        float: right;
+
+    
+    }
+
+    #nav-links-desktop a {
+        background-color: rgba(177, 4, 4, 0);
+        color: black;
+        width: max-content;
+        height: 50px;
+        text-decoration: none;
+        text-align: center;
+        padding-top: 10px;
+        
+
+        flex-grow: 1;
+
+        transition: all 0.3s ease;
+        
+    
+    }
+
+    #nav-links-desktop a:hover {
+        color: rgb(209, 71, 7);
+
+        border-bottom: 5px solid rgb(209, 71, 7);
+        
+    
+    }
+
+    
+
+}

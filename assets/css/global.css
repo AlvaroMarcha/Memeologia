@@ -1,0 +1,114 @@
+@import url(style.footer.css);
+
+/*VARIABLES*/
+:root {
+    /*HEADER*/
+    --oscuro: #004173;
+    --primario: #0979b0;
+    --secundario: #0cb7f2;
+    --claro: #7cdaf9;
+    --suave: #b6ffff;
+    --blanco: white;
+
+
+}
+
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content max-content max-content;
+    grid-template-areas:
+        'header'
+        'main'
+        'footer'
+    ;
+
+}
+
+main {
+    grid-area: main;
+
+    display: block;
+    width: 100%;
+    height: max-content;
+    margin-top: 0px;
+    margin-bottom: 100px;
+
+    transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+
+}
+
+
+.title {
+    display: block;
+    width: 90%;
+    height: max-content;
+    margin: auto;
+
+    padding-top: 20px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.text {
+    display: block;
+    width: 90%;
+    height: max-content;
+    margin: auto;
+
+    margin-top: 20px;
+    margin-bottom: 25px;
+    background-color: rgba(255, 0, 0, 0);
+
+}
+
+p span {
+    font-weight: bolder;
+    color: rgb(0, 183, 255);
+
+}
+
+/* Botones Generales */
+.btn {
+    background-color: var(--primario);
+    color: white;
+    display: block;
+    width: max-content;
+    height: 60px;
+    margin: auto;
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+
+}
+
+
+/* Otras resoluciones - Desktop */
+@media (min-width:860px) {
+    .content, h1.title{
+        display: block;
+        width: 50%;
+        height: max-content;
+        margin: auto;
+
+    }
+
+
+}

@@ -1,0 +1,47 @@
+@import url(global.css);
+
+/* OPTION */
+
+.option{
+    display: block;
+    width: 90%;
+    height: 20vh;
+    margin: auto;
+    margin-top: 40px;
+
+    border-radius: 10px;
+    background-color: var(--primario);
+
+}
+
+.option div{
+    display: block;
+    width: 90%;
+    height: 10vh;
+    margin: auto;
+
+    padding-top: 25px;
+    text-align: center;
+
+
+
+}
+
+.option div a{
+
+    display: block;
+    width: 90%;
+    height: 50px;
+    margin: auto;
+
+    padding-top: 10px;
+
+    text-decoration: none;
+    color: white;
+
+    font-size: 20px;
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
