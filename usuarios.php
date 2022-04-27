@@ -77,52 +77,12 @@
         </div>
         <div  class="option">
             <div>
-                <a href="">Iniciar Sesión</a>
+                <a href="login.php">Iniciar Sesión</a>
             </div>
             <div>
                 <a href="">Registrarse</a>
             </div>
         </div>
-        <!-- <h2 class="title">Iniciar Sesión</h2>
-        <div class="form">
-            <form action="usuarios.php" method="POST">
-                <div class="principal-form">
-                    <div>
-                        <input type="text" name="user" placeholder="Usuario..." autocomplete="off">
-                    </div>
-                    <div>
-                        <input type="password" name="pass" placeholder="Contraseña..." autocomplete="off">
-                    </div>
-                </div>
-                <div class="button">
-                    <button type="submit" name="enviar">Entrar</button>
-                </div>
-                <div class="status" id="form">
-                    <?php
-                    if (isset($_POST['enviar'])) {
-                        //Recuperamos las variables
-                        $user = $_POST['user'];
-                        $pass = $_POST['pass'];
-                        if (!empty($user) && !empty($pass)) {
-                            //Ahora hacemos la comparacion
-                            if (existLogin($user, $pass)) {
-                                // header("location: memeologia.com/inside/principal.php?user=$user");
-                                header("location: ../inside/principal.php?user=$user");
-                                echo "Esta correcto aqui - Es tema de la redireccion";
-                            } else {
-                                $status = "Las credenciales son incorrectas";
-                            }
-                        } else {
-                            $status = "Rellena los campos";
-                        }
-                    } else {
-                        $status = "Introduce tus credenciales";
-                    }
-                    ?>
-                    <p><?php  echo $status; ?></p>
-                </div>
-            </form>
-        </div> -->
     </main>
     <footer>
         <div class="social">
