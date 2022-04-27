@@ -1,3 +1,4 @@
+<?php include "back/functions.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,46 +12,8 @@
     <title>Inicio de Sesión</title>
 
     <style>
-    /* Banners */
-    .banner {
-        display: block;
-        width: 100%;
-        height: 500px;
-        background: linear-gradient(rgba(0, 47, 255, 0.486), rgba(0, 132, 255, 0.308)), url(assets/img/banner-troll.jpg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-
-    }
-
-    h3.superior {
-        display: block;
-        width: max-content;
-        height: max-content;
-        margin: auto;
-
-        position: relative;
-        top: 10px;
-
-
-        font-size: 50px;
-        color: rgb(243, 239, 0);
-        text-shadow: 8px 10px rgba(255, 255, 255, 0.473);
-
-    }
-
-    h3.inferior {
-        display: block;
-        width: max-content;
-        height: max-content;
-        margin: auto;
-
-        position: relative;
-        top: 320px;
-
-        font-size: 50px;
-        color: rgb(200, 255, 0);
-        text-shadow: 8px 10px rgba(255, 255, 255, 0.473);
+    main {
+        margin-bottom: 0px;
 
     }
     </style>
@@ -61,7 +24,7 @@
         <button class="menuB" id="menuBoton" onclick="toggle()" value="false"><img src="assets/icons/menu-dia.png"
                 alt=""></button>
         <div id="nav-links">
-            <a href="#" id="1">Memeologia</a>
+            <a href="index.php" id="1">Memeologia</a>
             <a href="usuarios.php" id="2">Usuarios</a>
             <a href="nosotros.php" id="3">Nosotros</a>
             <a href="ideas.php" id="4">Contacto de Ideas</a>
@@ -69,7 +32,7 @@
             </a>
         </div>
         <div id="nav-links-desktop">
-            <a href="#" id="1">Memeologia</a>
+            <a href="indexp.php" id="1">Memeologia</a>
             <a href="usuarios.php" id="2">Usuarios</a>
             <a href="nosotros.php" id="3">Nosotros</a>
             <a href="ideas.php" id="4">Contacto de Ideas</a>
@@ -79,20 +42,14 @@
     <main>
         <h2 class="title">Iniciar Sesión</h2>
         <div class="form">
-            <form action="usuarios.php" method="POST">
-                <div class="principal-form">
-                    <div>
-                        <input type="text" name="user" placeholder="Usuario..." autocomplete="off">
-                    </div>
-                    <div>
-                        <input type="password" name="pass" placeholder="Contraseña..." autocomplete="off">
-                    </div>
-                </div>
+            <form action="login.php" method="POST">
+                <input type="text" name="user" placeholder="Usuario" autocomplete="off"><br>
+                <input type="password" name="pass" placeholder="Contraseña" autocomplete="off"><br>
                 <div class="button">
                     <button type="submit" name="enviar">Entrar</button>
-                </div>
-                <div class="status" id="form">
+                    <div class="status" id="form">
                     <?php
+                    $tag="";
                     if (isset($_POST['enviar'])) {
                         //Recuperamos las variables
                         $user = $_POST['user'];
@@ -101,20 +58,23 @@
                             //Ahora hacemos la comparacion
                             if (existLogin($user, $pass)) {
                                 // header("location: memeologia.com/inside/principal.php?user=$user");
-                                header("location: ../inside/principal.php?user=$user");
+                                header("location: inside/principal.php?user=$user");
                                 echo "Esta correcto aqui - Es tema de la redireccion";
                             } else {
                                 $status = "Las credenciales son incorrectas";
+                                $tag="<p class='incorrectas'>$status</p>";
                             }
                         } else {
                             $status = "Rellena los campos";
+                            $tag="<p class='rellena'>$status</p>";
                         }
                     } else {
                         $status = "Introduce tus credenciales";
+                        $tag="<p class='introduce'>$status</p>";
                     }
                     ?>
-                    <p><?php  echo $status; ?></p>
-                </div>
+                        <?php  echo $tag; ?>
+                    </div>
             </form>
         </div>
     </main>
