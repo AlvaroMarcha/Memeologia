@@ -46,6 +46,11 @@
 
 }
 
+.option div a:hover{
+    color: rgb(21, 173, 219);
+
+}
+
 /* LOGIN */
 
 .form form{
@@ -124,6 +129,11 @@ div.status p{
 }
 
 /* Colores del Status del Login */
+.correct{
+    color: green;
+
+}
+
 .introduce{
     color: rgb(9, 186, 230);
 
@@ -142,5 +152,100 @@ div.status p{
 
 
 
-/* REGISTER */
+/* CONTACTO PARA IDEAS - SOPORTE */
+textarea{
+    margin-top: 40px;
+    font-size: 20px;
+    padding-left: 5px;
+    border: none;
+    background-color: rgba(255, 0, 0, 0);
+    outline: none;
+    color: white;
+    border-radius: 5px;
 
+    
+
+
+}
+
+textarea:focus{
+    box-shadow: 1px 50px 1000px rgba(24, 22, 22, 0.699);
+
+}
+
+textarea::placeholder{
+    color: white;
+
+}
+
+
+
+
+/* Estilos de Escritorio */
+
+@media (min-width: 860px) {
+    .option{
+        display: block;
+        width: 20%;
+        height: max-content;
+        margin: auto;
+        margin-top: 40px;
+    
+        border-radius: 10px;
+        background-color: var(--primario);
+    
+    }
+
+    /* LOGIN ESCRITORIO */
+    .form form{
+        background: linear-gradient(rgba(0, 195, 255, 0.692), rgba(0, 0, 0, 0.575)), url(../img/background-form.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    
+    }
+    
+    form input{
+        width: 60%;
+        height: 50px;
+    
+    
+        background-color: rgba(5, 5, 5, 0);
+        color: white;
+        border: none;
+        border-bottom: 1px solid white;
+        outline: none;
+        padding-left: 5px;
+    
+        font-size: 20px;
+    
+    }
+
+    form button{
+        display: block;
+        width: 20%;
+        height: 55px;
+        margin-top: 20px;
+    
+    
+    
+    }
+
+    form div.status{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40%;
+        height: 50px;
+        margin-left: 10px;
+        margin-top: 20px;
+        text-align: center;
+    
+        border-bottom: 1px solid white;
+    
+    }
+    
+
+
+
+}

@@ -50,7 +50,6 @@ main {
 
 }
 
-
 .title {
     display: block;
     width: 90%;
@@ -61,6 +60,15 @@ main {
 
     font-family: Arial, Helvetica, sans-serif;
 
+}
+
+.warning {
+    color: rgb(224, 31, 6);
+
+}
+
+.explication{
+    color: #0a3a52dc;
 }
 
 .text {

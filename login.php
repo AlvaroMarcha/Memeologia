@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/global.css">
     <link rel="stylesheet" href="assets/css/style.header.css">
     <link rel="stylesheet" href="assets/css/style.forms.css">
+    <link rel="shortcut icon" href="assets/icons/icono.ico" type="image/x-icon">
     <title>Inicio de Sesión</title>
 
     <style>

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/global.css">
     <link rel="stylesheet" href="assets/css/style.header.css">
+    <link rel="shortcut icon" href="assets/icons/icono.ico" type="image/x-icon">
     <title>Memeologia</title>
 
     <style>
@@ -23,37 +24,35 @@
     }
 
     h3.superior {
-    display: block;
-    width: max-content;
-    height: max-content;
-    margin: auto;
+        display: block;
+        width: max-content;
+        height: max-content;
+        margin: auto;
 
-    position: relative;
-    top: 10px;
-
-
-    font-size: 50px;
-    color: rgb(243, 239, 0);
-    text-shadow: 8px 10px rgba(255, 255, 255, 0.473);
-
-}
-
-h3.inferior {
-    display: block;
-    width: max-content;
-    height: max-content;
-    margin: auto;
-
-    position: relative;
-    top: 320px;
-
-    font-size: 50px;
-    color: rgb(200, 255, 0);
-    text-shadow: 8px 10px rgba(255, 255, 255, 0.473);
-
-}
+        position: relative;
+        top: 10px;
 
 
+        font-size: 50px;
+        color: rgb(243, 239, 0);
+        text-shadow: 8px 10px rgba(255, 255, 255, 0.473);
+
+    }
+
+    h3.inferior {
+        display: block;
+        width: max-content;
+        height: max-content;
+        margin: auto;
+
+        position: relative;
+        top: 320px;
+
+        font-size: 50px;
+        color: rgb(200, 255, 0);
+        text-shadow: 8px 10px rgba(255, 255, 255, 0.473);
+
+    }
     </style>
 </head>
 
@@ -111,6 +110,12 @@ h3.inferior {
                 <span>Tercero:</span> Disfrutar de los test sobre Memeología que he recopilado.
             </p>
             <a href="usuarios.php" class="btn">Ir a Usuarios</a>
+            <br>
+            <h2 class="title">Noticias y actualizaciones</h2>
+            <p class="text">
+                Aquí encontrarás las ultimas noticias y actualizaciones de la pagina web. <br>
+                <a href="noticias.php">Ir a noticias</a>
+            </p>
         </div>
         <h1 class="title">Here the tiroteo Escolar cuenta 80% de Calificacion</h1>
     </main>

@@ -16,9 +16,10 @@
         display: block;
         width: 100%;
         height: 80vh;
-        background: linear-gradient(rgba(0, 47, 255, 0.486), rgba(0, 132, 255, 0.308)), url(assets/img/troll.jpg);
+        background: linear-gradient(rgba(0, 47, 255, 0.486), rgba(0, 132, 255, 0.308)), url(assets/img/tobey.jpg);
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: center;
         /* background-attachment: fixed; */
 
     }
@@ -44,6 +45,21 @@
         color: rgb(243, 239, 0);
         text-shadow: 8px 10px rgba(255, 255, 255, 0.473);
 
+
+    }
+
+    @media (min-width: 860px) {
+        /* Banners */
+    .banner {
+        display: block;
+        width: 100%;
+        height: 80vh;
+        background: linear-gradient(rgba(0, 47, 255, 0.486), rgba(0, 132, 255, 0.308)), url(assets/img/dolortobey.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        /* background-attachment: fixed; */
+
+    }
 
     }
 
@@ -80,7 +96,7 @@
                 <a href="login.php">Iniciar Sesión</a>
             </div>
             <div>
-                <a href="">Registrarse</a>
+                <a href="registro.php">Registrarse</a>
             </div>
         </div>
     </main>
