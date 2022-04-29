@@ -10,6 +10,31 @@
     --suave: #b6ffff;
     --blanco: white;
 
+    /* INSIDE PALETTE */
+    --oscuroInside: #000000;
+    --azulOscuro: #01111e;
+    --azul:#002138;
+    --azulito:#013254;
+
+
+
+
+
+
+
+
+    /* Colores de los Niveles/Marcos */
+    --muyFacil:#AEFA22;
+    --facil: #2EFA01;
+    --yaNoTanFacil: #D7FA00;
+    --seComplica: #FACA00;
+    --medio: #FAAA00;
+    --uyAVer: #FA8700;
+    --pasable: #FA4B00;
+    --traiganleunafaldaalaniña: #FA1900;
+    --dificil: #FA002E;
+    --siEsDificil: #1118FA;
+    --tacomplicado: #00D2FA;
 
 }
 

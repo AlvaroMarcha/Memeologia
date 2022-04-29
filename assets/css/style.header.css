@@ -138,6 +138,9 @@ header {
     
     }
 
+    #nav-links-desktop a:last-child:hover {
+        border-bottom: none;
     
-
+    }
+    
 }

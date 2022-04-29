@@ -11,7 +11,10 @@ var uno = document.getElementById("1");
 var dos = document.getElementById("2");
 var tres = document.getElementById("3");
 var cuatro = document.getElementById("4");
+var cinco = document.getElementById("5");
 var last = document.getElementById("last");
+
+var corona=getElementById("corona");
 
 
 //Funciones para el menu responsive de movil
@@ -25,7 +28,8 @@ function openMenu() {
         setTimeout(function () { dos.style.opacity = 1 }, 400);
         setTimeout(function () { tres.style.opacity = 1 }, 500);
         setTimeout(function () { cuatro.style.opacity = 1 }, 600);
-        setTimeout(function () { last.style.opacity = 1 }, 700);
+        setTimeout(function () { cinco.style.opacity = 1 }, 700);
+        setTimeout(function () { last.style.opacity = 1 }, 800);
     }, 300);
 
 }
@@ -35,7 +39,8 @@ function closeMenu() {
     setTimeout(function () { dos.style.opacity = 0 }, 600);
     setTimeout(function () { tres.style.opacity = 0 }, 500);
     setTimeout(function () { cuatro.style.opacity = 0 }, 400);
-    setTimeout(function () { last.style.opacity = 0 }, 300);
+    setTimeout(function () { cinco.style.opacity = 0 }, 300);
+    setTimeout(function () { last.style.opacity = 0 }, 200);
 
     setTimeout(function () {
         menu.style.top = "-100%";

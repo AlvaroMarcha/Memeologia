@@ -1,2 +1,188 @@
 @import url(global.css);
 
+/* Perfil del usuario */
+.pic{
+    display: block;
+    width: 220px;
+    height: 220px;
+    margin: auto;
+    margin-top: -40px;
+
+    border: 10px solid rgba(1, 144, 240, 0.199);
+    border-radius: 10px;
+
+}
+
+#corona{
+    display: none;
+    width: 50px;
+    height: 50px;
+    
+    position: absolute;
+    top: 6%;
+    left: 23%;
+
+    transform: rotate(315deg);
+
+    z-index: 100;
+
+}
+
+.name{
+    display: block;
+    width: 90%;
+    height: max-content;
+    margin: auto;
+    margin-top: 20px;
+
+    padding-bottom: 40px;
+    /* border: 3px solid rgba(1, 144, 240, 0.199); */
+    border-radius: 10px;
+
+
+    /* background-color: var(--azul); */
+
+}
+
+.name span{
+    display: block;
+    width: 100%;
+    height: max-content;
+    margin: auto;
+    padding-top: 20px;
+    color: white;
+    
+    font-size: 30px;
+    text-align: center;
+    
+
+}
+
+.follow{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    'followers likes following'
+    ;
+
+
+    width: 80%;
+    height: 60px;
+    margin: auto;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    text-align: center;
+
+    border-bottom: 1px solid white;
+
+}
+
+.followers{
+    grid-area: followers;
+    display: block;
+    width: 100%;
+
+    border-radius: 5px;
+
+}
+
+.likes{
+    grid-area: likes;
+    display: block;
+    width: 100%;
+
+    border-radius: 50px;
+
+    background-color: rgba(0, 183, 255, 0.363);
+    color: rgb(251, 255, 0);
+
+}
+
+.following{
+    grid-area: following;
+    display: block;
+    width: 100%;
+
+    border-radius: 5px;
+
+}
+
+
+.data{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    'exp titulo'
+    ;
+
+    width: 100%;
+    height: max-content;
+    margin: auto;
+    margin-bottom: 70px;
+
+    text-align: center;
+
+}
+
+.exp{
+    display: block;
+    width: 100%;
+
+
+}
+
+.titulo{
+    display: block;
+    width: 100%;
+
+    border-left: 1px solid white;
+
+}
+
+.description{
+    display: block;
+    width: 90%;
+    height: max-content;
+    margin: auto;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(5, 88, 121, 0.582);
+    color: rgb(255, 255, 255);
+    box-shadow: inset 0px 6px 50px rgba(0, 0, 0, 0.76);
+
+
+}
+
+.reset{
+    display: block;
+    width: 70%;
+    height: max-content;
+    margin: auto;
+    margin-bottom: 40px;
+
+    padding: 10px;
+
+
+}
+
+.reset a{
+    display: block;
+    width: 70%;
+    height: 50px;
+    margin: auto;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    padding-top: 12px;
+
+    background-color: rgba(255, 0, 0, 0.692);
+    box-shadow: inset 0px 6px 40px rgba(192, 79, 4, 0.973);
+    color: white;
+
+
+}
