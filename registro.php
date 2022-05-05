@@ -45,24 +45,26 @@
             <form action="registro.php" method="POST">
                 <input type="text" name="user" placeholder="Usuario" autocomplete="off"><br>
                 <input type="password" name="pass" placeholder="Contraseña" autocomplete="off"><br>
+                <input type="email" name="email" placeholder="Email" autocomplete="off"><br>
                 <div class="button">
                     <button type="submit" name="enviar">Entrar</button>
                     <div class="status" id="form">
                     <?php
                     $tag="";
                     if (isset($_POST['enviar'])) {
-                    //Recuperamos las variables
-                    $user = $_POST['user'];
-                    $pass = $_POST['pass'];
-                    if (!empty($user) && !empty($pass)) {
-                        //Ahora hacemos la comparacion
-                        $logs=registerUser($user, $pass);
-                        echo $logs;
-                        header("location: inside/principal.php?user=$user");
-                    } else {
-                        $status = "Rellena los campos";
-                        $tag="<p class='rellena'>$status</p>";
-                    }
+                        //Recuperamos las variables
+                        $user = $_POST['user'];
+                        $pass = $_POST['pass'];
+                        $email= $_POST['email'];
+                        if (!empty($user) && !empty($pass) && !empty($email)) {
+                            //Ahora hacemos la comparacion
+                            $logs=registerUser($user, $pass, $email);
+                            echo $logs;
+                            header("location: inside/principal.php?user=$user");
+                        } else {
+                            $status = "Rellena los campos";
+                            $tag="<p class='rellena'>$status</p>";
+                        }
                     } else {
                         $status = "Registrate en un click";
                         $tag="<p class='introduce'>$status</p>";

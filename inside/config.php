@@ -1,15 +1,9 @@
 <?php
 session_start();
 require "../back/functions.php";
-//Save data session into database
-if (isset($_GET['user'])) {
-    $GLOBALS['user'] = $_GET['user'];
-    //Call the method
-    saveSession($GLOBALS['user']);
-}
-$exp = getExpUser(getUsername(session_id()));
-$title = getTitleByExp(getUsername(session_id()), $exp);
-$userName=getUserName(session_id());
+
+$name=getUserName(session_id());
+$email=getUserEmail(session_id(), $name);
 $url=getUserPicPath();
 
 ?>
@@ -22,74 +16,42 @@ $url=getUserPicPath();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/global.css">
     <link rel="stylesheet" href="../assets/css/style.header.css">
-    <link rel="stylesheet" href="../assets/css/style.inside.principal.css">
+    <link rel="stylesheet" href="../assets/css/style.config.css">
     <title>Memeologia | Registro</title>
     <style>
     main {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows:auto auto auto auto;
+        grid-template-areas:
+            'profile'
+            'name'
+            'password'
+            'email'
+        ;
+
+        height: max-content;
+        /* background-color:red; */
         margin-top: 60px;
         border-top: 2px solid black;
-        background-color: #01111e;
         margin-bottom: 0px;
+        background-color: #01111e;
         color: white;
     }
 
 
-    @media (min-width: 860px) {
-        main{
+    /* @media (min-width: 860px) {
+        main {
             display: grid;
-            grid-template-columns: 35% 1fr;
-            grid-template-rows: auto auto auto auto auto;
-            grid-template-areas: 
-            'pic follow' 
-            'name posts'
-            'data posts'
-            'description posts'
-            'reset posts'
-            ;
 
-
+            margin-top: 60px;
+            border-top: 2px solid black;
+            background-color: #01111e;
+            margin-bottom: 0px;
+            color: white;
         }
 
-
-    }
-
-    @media (min-width: 1460px) {
-        main{
-            display: grid;
-            grid-template-columns: 30% 1fr;
-            grid-template-rows: auto auto auto auto auto;
-            grid-template-areas: 
-            'pic follow' 
-            'name posts'
-            'data posts'
-            'description posts'
-            'reset posts'
-            ;
-
-
-        }
-
-
-    }
-
-    @media (min-width: 1860px) {
-        main{
-            display: grid;
-            grid-template-columns: 25% 1fr;
-            grid-template-rows: auto auto auto auto auto;
-            grid-template-areas: 
-            'pic follow' 
-            'name posts'
-            'data posts'
-            'description posts'
-            'reset posts'
-            ;
-
-
-        }
-
-
-    }
+    } */
     </style>
 </head>
 
@@ -98,7 +60,7 @@ $url=getUserPicPath();
         <button class="menuB" id="menuBoton" onclick="toggle()" value="false"><img src="../assets/icons/menu-dia.png"
                 alt=""></button>
         <div id="nav-links">
-            <a href="#" id="1">Perfil</a>
+            <a href="principal.php" id="1">Perfil</a>
             <a href="test.php" id="2">Tests</a>
             <a href="nosotros.php" id="3">Ranking Global</a>
             <a href="config.php" id="4">Configuración</a>
@@ -107,7 +69,7 @@ $url=getUserPicPath();
             </a>
         </div>
         <div id="nav-links-desktop">
-            <a href="#" id="1">Perfil</a>
+            <a href="principal.php" id="1">Perfil</a>
             <a href="test.php" id="2">Tests</a>
             <a href="nosotros.php" id="3">Ranking Global</a>
             <a href="config.php" id="4">Configuración</a>
@@ -116,46 +78,45 @@ $url=getUserPicPath();
         </div>
     </header>
     <main>
-        <img src="../assets/icons/todopoderosorey.png" width="50px" id="corona">
-        <div class="pic">
+        <div class="profile">
             <img src="<?php echo $url; ?>" width="200px" height="200px">
+            <div class="toUploadPicProfile">
+                <form action="" class="form1">
+                    <!-- Upload new image -->
+                    <label for="file" id="label">
+                        <span><img src="../assets/icons/uploadimg.png"><p>Subir imagen</p></span>
+                    </label><br>
+                    <input type="file" name="imagen" id="file">
+                    <input type="submit" value="Establecer" class="submit">
+                </form>
+            </div>
         </div>
         <div class="name">
-            <span>[<?php echo getUsername(session_id()); ?>]</span>
-        </div>
-        <div class="follow">
-            <div class="followers">
-                <p>3 <br> Seguidores</p>
-            </div>
-            <div class="likes">
-                <p>56 <br> Me gustas</p>
-            </div>
-            <div class="following">
-                <p>54 <br>Siguiendo</p>
+            <div class="toChangeName">
+                <form action="">
+                    <!-- Change name -->
+                    <input type="text" name="newName" id="newName" value="<?php echo $name; ?>">
+                    <input type="submit" value="Establecer">
+                </form>
             </div>
         </div>
-        <div class="data">
-            <div class="exp">
-                <p>Experiencia <br> <span class="exp"><?php echo $exp; ?></span></p>
+        <div class="password">
+            <div class="toChangePass">
+                <form action="">
+                    <!-- Change password -->
+                    <input type="password" name="newPass" id="newPass" value="***********">
+                    <input type="submit" value="Establecer">
+                </form>
             </div>
-            <div class="titulo">
-                <p>Título <br> <?php echo $title; ?></p>
+        </div>
+        <div class="email">
+            <div class="toChangeEmail">
+                <form action="">
+                    <!-- Change name -->
+                    <input type="email" name="newEmail" id="newEmail" value="<?php echo $email; ?>">
+                    <input type="submit" value="Establecer">
+                </form>
             </div>
-        </div>
-        <div class="description">
-            <h3 class="title">Estado </h3>
-            <p class="text">
-                Participante de los Brunos. <br>
-                Bruno Mendez.
-            </p>
-        </div>
-        <div class="reset">
-            <a href="config.php">Modificar mi perfil</a>
-        </div>
-
-        <!-- POSTS DE LOS USUARIOS -->
-        <div class="posts">
-            here the post
         </div>
 
 

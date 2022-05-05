@@ -1,0 +1,141 @@
+@import url(global.css);
+
+.form1{
+    display: block;
+    width: 100%;
+    height: max-content;
+    margin: auto;
+
+    background-color: rgba(255, 196, 0, 0);
+
+}
+
+/* Profile */
+.profile {
+    grid-area: profile;
+
+    display: block;
+    width: 100%;
+    height: max-content;
+    padding-bottom: 30px;
+    margin: auto;
+    margin-top: -20px;
+    margin-bottom: 30px;
+
+    background-color: rgba(0, 255, 13, 0);
+}
+
+.profile > img{
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+
+    border: 5px solid rgba(255, 255, 255, 0.678);
+    border-radius: 50%;
+
+}
+
+.profile .toUploadPicProfile{
+    display: flex;
+    width: 100%;
+    height: max-content;
+    margin: auto;
+    margin-top: 20px;
+    
+
+    padding-bottom: 0px;
+
+    background-color: rgba(137, 43, 226, 0);
+
+}
+
+.profile .toUploadPicProfile label{
+    cursor: pointer;
+
+}
+
+.profile .toUploadPicProfile input[type="file"]{
+    opacity: 0;
+
+}
+
+#label{
+    display: block;
+    width: 50%;
+    height: 70px;
+    margin: auto;
+    text-align: center;
+    border-radius: 10px;
+
+    background-color: rgba(179, 216, 12, 0);
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0.007);
+
+}
+
+#label span{
+    margin-top: -5px;
+
+}
+
+#label span img{
+    margin-top: 10px;
+
+}
+
+.submit{
+    background-color: rgba(255, 145, 0, 0.822);
+    display: block;
+    width: 60%;
+    height: 60px;
+    margin: auto;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+    margin-top: -30px;
+
+}
+
+
+/* Name */
+.name{
+    grid-area: name;
+
+    display: block;
+    width: 100%;
+    height: 100px;
+    margin-top: -20px;
+
+
+    background-color: rgba(0, 0, 255, 0.733);
+
+}
+
+
+/* Password */
+.password{
+    grid-area: password;
+
+    display: block;
+    width: 100%;
+    height: 100px;
+    margin-top: -20px;
+
+    background-color: aqua;
+
+}
+
+/* Email */
+.email{
+    grid-area: email;
+
+    display: block;
+    width: 100%;
+    height: 100px;
+    margin-top: -20px;
+
+
+background-color: brown;
+
+}

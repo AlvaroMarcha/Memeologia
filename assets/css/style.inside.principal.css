@@ -1,7 +1,7 @@
 @import url(global.css);
 
 /* Perfil del usuario */
-.pic{
+.pic {
     display: block;
     width: 220px;
     height: 220px;
@@ -11,13 +11,15 @@
     border: 10px solid rgba(1, 144, 240, 0.199);
     border-radius: 10px;
 
+    box-shadow: 0px 0px 10px 10px rgba(0, 138, 202, 0.979);
+
 }
 
-#corona{
+#corona {
     display: none;
     width: 50px;
     height: 50px;
-    
+
     position: absolute;
     top: 6%;
     left: 23%;
@@ -28,7 +30,7 @@
 
 }
 
-.name{
+.name {
     display: block;
     width: 90%;
     height: max-content;
@@ -44,26 +46,26 @@
 
 }
 
-.name span{
+.name span {
     display: block;
     width: 100%;
     height: max-content;
     margin: auto;
     padding-top: 20px;
     color: white;
-    
+
     font-size: 30px;
     text-align: center;
-    
+
 
 }
 
-.follow{
+.follow {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
-    grid-template-areas: 
-    'followers likes following'
+    grid-template-areas:
+        'followers likes following'
     ;
 
 
@@ -78,7 +80,7 @@
 
 }
 
-.followers{
+.followers {
     grid-area: followers;
     display: block;
     width: 100%;
@@ -87,7 +89,7 @@
 
 }
 
-.likes{
+.likes {
     grid-area: likes;
     display: block;
     width: 100%;
@@ -99,7 +101,7 @@
 
 }
 
-.following{
+.following {
     grid-area: following;
     display: block;
     width: 100%;
@@ -109,12 +111,12 @@
 }
 
 
-.data{
+.data {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    grid-template-areas: 
-    'exp titulo'
+    grid-template-areas:
+        'exp titulo'
     ;
 
     width: 100%;
@@ -126,14 +128,14 @@
 
 }
 
-.exp{
+.exp {
     display: block;
     width: 100%;
 
 
 }
 
-.titulo{
+.titulo {
     display: block;
     width: 100%;
 
@@ -141,7 +143,7 @@
 
 }
 
-.description{
+.description {
     display: block;
     width: 90%;
     height: max-content;
@@ -158,7 +160,7 @@
 
 }
 
-.reset{
+.reset {
     display: block;
     width: 70%;
     height: max-content;
@@ -170,7 +172,7 @@
 
 }
 
-.reset a{
+.reset a {
     display: block;
     width: 70%;
     height: 50px;
@@ -180,9 +182,249 @@
     border-radius: 10px;
     padding-top: 12px;
 
-    background-color: rgba(255, 0, 0, 0.692);
-    box-shadow: inset 0px 6px 40px rgba(192, 79, 4, 0.973);
+    background-color: rgb(0, 119, 255);
+    box-shadow: inset 0px 4px 30px rgb(0, 132, 255);
     color: white;
+
+
+}
+
+.posts{
+    display: block;
+    width: 90%;
+    height: 40vh;
+    margin: auto;
+    margin-bottom: 30px;
+
+    background-color: red;
+
+
+}
+
+
+/* Medias Querys para Escritorio */
+
+@media (min-width: 860px) {
+
+    /* Perfil del usuario */
+    .pic {
+        grid-area: pic;
+
+        display: block;
+        width: 220px;
+        height: 220px;
+        margin:auto;
+        margin-top: -20px;
+
+        border: 10px solid rgba(1, 144, 240, 0.199);
+        border-radius: 10px;
+
+        box-shadow: 0px 0px 10px 10px rgba(0, 138, 202, 0.979);
+
+
+
+    }
+
+    #corona {
+        display: none;
+        width: 50px;
+        height: 50px;
+
+        position: absolute;
+        top: 6%;
+        left: 23%;
+
+        transform: rotate(315deg);
+
+        z-index: 100;
+
+    }
+
+    .name {
+        grid-area: name;
+
+        display: block;
+        width: 100%;
+        height: max-content;
+        margin: auto;
+        margin-top: 20px;
+
+        padding-bottom: 40px;
+        /* border: 3px solid rgba(1, 144, 240, 0.199); */
+        border-radius: 10px;
+
+
+        /* background-color: var(--azul); */
+
+    }
+
+    .name span {
+        display: block;
+        width: 100%;
+        height: max-content;
+        margin: auto;
+        padding-top: 20px;
+        color: white;
+
+        font-size: 30px;
+        text-align: center;
+
+
+    }
+
+    .follow {
+        grid-area: follow;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            'followers likes following'
+        ;
+
+
+        width: 90%;
+        height: 60px;
+        margin: auto;
+        margin-top: 10px;
+        padding-bottom: 10px;
+        text-align: center;
+
+        border-bottom: 1px solid white;
+
+    }
+
+    .followers {
+        grid-area: followers;
+        display: block;
+        width: 100%;
+
+        border-radius: 5px;
+
+    }
+
+    .likes {
+        grid-area: likes;
+        display: block;
+        width: 100%;
+
+        border-radius: 50px;
+
+        background-color: rgba(0, 183, 255, 0.363);
+        color: rgb(251, 255, 0);
+
+    }
+
+    .following {
+        grid-area: following;
+        display: block;
+        width: 100%;
+
+        border-radius: 5px;
+
+    }
+
+
+    .data {
+        grid-area: data;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            'exp titulo'
+        ;
+
+        width: 100%;
+        height: max-content;
+        margin-left: 20px;
+        margin-bottom: 70px;
+
+        text-align: center;
+
+    }
+
+    .exp {
+        grid-area: exp;
+
+        display: block;
+        width: 100%;
+
+
+    }
+
+    .titulo {
+        grid-area: titulo;
+
+        display: block;
+        width: 100%;
+
+        border-left: 1px solid white;
+
+    }
+
+    .description {
+        grid-area: description;
+
+        display: block;
+        width: 80%;
+        height: max-content;
+        margin: auto;
+        margin-top: -40px;
+        padding-bottom: 20px;
+
+        border: none;
+        border-radius: 10px;
+        background-color: rgba(5, 88, 121, 0);
+        color: rgb(255, 255, 255);
+        box-shadow: inset 0px 6px 50px rgba(0, 0, 0, 0);
+
+
+    }
+
+    .reset {
+        grid-area: reset;
+
+        display: block;
+        width: 100%;
+        height: max-content;
+        margin: auto;
+        margin-bottom: 40px;
+
+        padding: 10px;
+
+
+    }
+
+    .reset a {
+        display: block;
+        width: 70%;
+        height: max-content;
+        margin: auto;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 10px;
+        padding-top: 12px;
+        padding-bottom: 10px;
+
+        background-color: rgb(0, 119, 255);
+        box-shadow: inset 0px 4px 30px rgb(0, 132, 255);
+        color: white;
+
+
+    }
+
+    .posts{
+        grid-area: posts;
+
+        display: block;
+        width: 90%;
+        height: 60vh;
+
+        margin-top: -120px;
+
+    }
+
 
 
 }

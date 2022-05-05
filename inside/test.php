@@ -34,7 +34,7 @@ require "../back/functions.php";
                 alt=""></button>
         <div id="nav-links">
             <a href="principal.php" id="1">Perfil</a>
-            <a href="test.php" id="2">Tests</a>
+            <a href="#" id="2">Tests</a>
             <a href="nosotros.php" id="3">Ranking Global</a>
             <a href="config.php" id="4">Configuración</a>
             <a href="../back/close-session.php" id="5">Cerrar sesión</a>
@@ -42,8 +42,8 @@ require "../back/functions.php";
             </a>
         </div>
         <div id="nav-links-desktop">
-            <a href="#" id="1">Perfil</a>
-            <a href="test.php" id="2">Tests</a>
+            <a href="principal.php" id="1">Perfil</a>
+            <a href="#" id="2">Tests</a>
             <a href="nosotros.php" id="3">Ranking Global</a>
             <a href="config.php" id="4">Configuración</a>
             <a href="../back/close-session.php" id="4"><img src="../assets/icons/sesion-close.png" width="30px"></a>
@@ -102,38 +102,7 @@ require "../back/functions.php";
                 </details>
             </div>
         </div>
-        <script src="../js/menu.js"></script>
-        <script>
-        var cinco = getElementById("5");
 
-        function closeMenu() {
-            setTimeout(function() {
-                uno.style.opacity = 0
-            }, 700);
-            setTimeout(function() {
-                dos.style.opacity = 0
-            }, 600);
-            setTimeout(function() {
-                tres.style.opacity = 0
-            }, 500);
-            setTimeout(function() {
-                cuatro.style.opacity = 0
-            }, 400);
-            setTimeout(function() {
-                cinco.style.opacity = 0
-            }, 400);
-            setTimeout(function() {
-                last.style.opacity = 0
-            }, 300);
-
-            setTimeout(function() {
-                menu.style.top = "-100%";
-                menu.style.transition = "1s";
-                menu.style.opacity = "1";
-                main.style.marginTop = "0px";
-            }, 800);
-        }
-        </script>
 
     </main>
     <aside>
@@ -169,6 +138,40 @@ require "../back/functions.php";
             </details>
         </div>
     </aside>
+
+    <script src="../js/menu.js"></script>
+    <script>
+    var cinco = getElementById("5");
+
+    function closeMenu() {
+        setTimeout(function() {
+            uno.style.opacity = 0
+        }, 700);
+        setTimeout(function() {
+            dos.style.opacity = 0
+        }, 600);
+        setTimeout(function() {
+            tres.style.opacity = 0
+        }, 500);
+        setTimeout(function() {
+            cuatro.style.opacity = 0
+        }, 400);
+        setTimeout(function() {
+            cinco.style.opacity = 0
+        }, 400);
+        setTimeout(function() {
+            last.style.opacity = 0
+        }, 300);
+
+        setTimeout(function() {
+            menu.style.top = "-100%";
+            menu.style.transition = "1s";
+            menu.style.opacity = "1";
+            main.style.marginTop = "0px";
+        }, 800);
+    }
+    </script>
+
     <footer>
         <p>Footer</p>
     </footer>

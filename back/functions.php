@@ -59,7 +59,7 @@ function existLogin($user, $pass)
 }
 
 //Insert - Register
-function registerUser($user, $pass)
+function registerUser($user, $pass, $email)
 {
     $encrypted = sha1($pass);
     $sql = "SELECT user FROM users WHERE user=:user";
@@ -71,14 +71,18 @@ function registerUser($user, $pass)
     if ($sentencia->rowCount() == 1) {
         $GLOBALS["status"] = "User already exist";
     } else if ($sentencia->rowCount() == 0) {
+        $picpath="../users/profilePic/tobey.jpg";
         $title = "Ningun titulo";
         $exp = 0;
-        $sql = "INSERT INTO users (user, pass, title, experience) VALUES (:user, :pass, :title, :experience)";
+        $sql = "INSERT INTO users (user, pass, title, experience, email, picpath) VALUES (:user, :pass, :title, :experience, :email, :picpath)";
         $sentencia = $base->prepare($sql);
         $sentencia->bindParam(":user", $user);
         $sentencia->bindParam(":pass", $encrypted);
         $sentencia->bindParam(":title", $title);
         $sentencia->bindParam(":experience", $exp);
+        $sentencia->bindParam(":email", $email);
+        $sentencia->bindParam(":picpath", $picpath);
+
         $sentencia->execute();
 
         $GLOBALS['status'] = "Registered";
@@ -104,6 +108,34 @@ function getUserId($user)
     $GLOBALS['status'] = "Getting the user id - User: $user";
 
     return $id;
+}
+
+//Functions to get the user email address
+function getUserEmail($id_session, $user) {
+    $id_user=getUserId($user);
+
+    $base=getConnection();
+    $sql="SELECT email FROM users WHERE id=:id_user";
+    $sentencia=$base->prepare($sql);
+    $sentencia->bindParam(":id_user", $id_user);
+    $sentencia->execute();
+
+    $results = $sentencia->fetchAll();
+    $email="";
+
+    foreach($results as $value){
+        $email=$value['email'];
+    }
+
+    $GLOBALS['status'] = "Getting the user email address - User: $user";
+
+    return $email;
+}
+
+
+//Functions to get the user memepoints
+function getUserMemepoints(){
+
 }
 
 //Functions to get data from database for the tests
@@ -330,3 +362,89 @@ function getTitle($exp)
     }
     return $title;
 }
+
+
+
+
+// USER CONFIGURATION FUNCTIONS
+
+//Function to change user
+function changeUser($newUser){
+    //Connection with database
+    $base=getConnection();
+    $sql="UPDATE users SET user=:newUser WHERE user=:oldUser";
+    $userName=getUserName(session_id());
+    $sentencia=$base->prepare($sql);
+    $sentencia->bindParam(':newUser',$newUser);
+    $sentencia->bindParam(':oldUser',$userName);
+    $sentencia->execute();
+
+    $GLOBALS['status'] = "User name Changed";
+
+    
+
+}
+
+//Function to change password
+function changePassword($newPass){
+    //Connection with database
+    $base= getConnection();
+    $sql="UPDATE users SET pass=:newPass WHERE user=:user";
+    $userName=getUserName(session_id());
+    //Encrypt password
+    $encrypted = sha1($newPass);
+    $sentencia=$base->prepare($sql);
+    $sentencia->bindParam(':newPass',$newPass);
+    $sentencia->bindParam(':user',$userName);
+    $sentencia->execute();
+
+    $GLOBALS['status'] = "User password Changed";
+
+    
+
+
+}
+
+//Function to change email address
+function changeEmail($newEmail){
+    //Connection with database
+    $base= getConnection();
+    $sql="UPDATE users SET email=:newEmail WHERE user=:user";
+    $userName=getUserName(session_id());
+    $sentencia=$base->prepare($sql);
+    $sentencia->bindParam(':newEmail',$newEmail);
+    $sentencia->bindParam(':user',$userName);
+    $sentencia->execute();
+
+    $GLOBALS['status'] = "User email Changed";
+
+}
+
+//Function to change picProfile
+//Function to get picProfile path
+function getUserPicPath() {
+    //Connection with database
+    $base= getConnection();
+    $sql="SELECT picpath FROM users WHERE user=:user";
+    $userName=getUserName(session_id());
+    $sentencia=$base->prepare($sql);
+    $sentencia->bindParam(':user',$userName);
+    $sentencia->execute();
+
+    $GLOBALS['status'] = "User pic path has been recovery";
+
+    $result=$sentencia->fetchAll();
+
+    $path="";
+    foreach($result as $value){
+        $path=$value['picpath'];
+    }
+
+    return $path;
+
+}
+
+
+
+
+?>
