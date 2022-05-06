@@ -160,6 +160,27 @@
 
 }
 
+/* Troll Status with js */
+.description a{
+    display: block;
+    width: max-content;
+    height: max-content;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+    color: rgb(255, 238, 0);
+
+    background-color: rgba(5, 5, 5, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.842);
+    border-radius: 10px;
+
+    position: relative;
+    top: 12px;
+    left: 17px;
+
+}
+
+
 .reset {
     display: block;
     width: 70%;

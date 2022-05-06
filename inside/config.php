@@ -80,15 +80,55 @@ $url=getUserPicPath();
     <main>
         <div class="profile">
             <img src="<?php echo $url; ?>" width="200px" height="200px">
-            <div class="toUploadPicProfile">
-                <form action="" class="form1">
+            <div class="toUploadPicProfile" id="pic">
+                <form action="config.php" method="post" enctype="multipart/form-data" class="form1">
                     <!-- Upload new image -->
                     <label for="file" id="label">
-                        <span><img src="../assets/icons/uploadimg.png"><p>Subir imagen</p></span>
+                        <span><img src="../assets/icons/uploadimg.png"><p>Seleccionar</p></span>
                     </label><br>
                     <input type="file" name="imagen" id="file">
-                    <input type="submit" value="Establecer" class="submit">
+                    <input type="submit" value="Subir" class="submit" name="submitProfile">
                 </form>
+                <!-- Aquí funcionalidad -->
+                <?php 
+                    // Comprobamos si se ha pulsado el boton del form 
+                    if(isset($_POST['submitProfile'])){
+                        // File data
+                        $fileTmpPath=$_FILES['imagen']['tmp_name'];
+                        $fileName=$_FILES['imagen']['name'];
+                        $fileSize=$_FILES['imagen']['size'];
+                        $fileType=$_FILES['imagen']['type'];
+                        $fileNameCmps=explode('.',$fileName);
+                        $fileExtension=strtolower(end($fileNameCmps));
+                        $newFileName=$name.'.'.$fileNameCmps[1];
+
+                        // Restringir archivos (Por ahora jpg, jpge y png);
+                        $allowedExtensions=array("jpg", "jpge", "png");
+
+                        if(in_array($fileExtension, $allowedExtensions)){
+                            $uploadFileDir="../users/profilePic/";
+                            $dest_path=$uploadFileDir.$newFileName;
+
+                            if(move_uploaded_file($fileTmpPath, $dest_path)){
+                                // Connecto to the DB
+                                changePicProfile($dest_path);
+                                header("location: config.php#pic");
+                            }else{
+
+                            }
+
+                        }
+
+
+
+
+                        
+
+                    }
+                
+                
+                
+                ?>
             </div>
         </div>
         <div class="name">
@@ -98,6 +138,13 @@ $url=getUserPicPath();
                     <input type="text" name="newName" id="newName" value="<?php echo $name; ?>">
                     <input type="submit" value="Establecer">
                 </form>
+                <!-- Aquí funcionalidad -->
+                <?php 
+
+                
+                
+                
+                ?>
             </div>
         </div>
         <div class="password">
@@ -107,6 +154,13 @@ $url=getUserPicPath();
                     <input type="password" name="newPass" id="newPass" value="***********">
                     <input type="submit" value="Establecer">
                 </form>
+                <!-- Aquí funcionalidad -->
+                <?php 
+
+                
+                
+                
+                ?>
             </div>
         </div>
         <div class="email">

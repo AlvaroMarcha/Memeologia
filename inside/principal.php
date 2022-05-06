@@ -144,10 +144,8 @@ $url=getUserPicPath();
         </div>
         <div class="description">
             <h3 class="title">Estado </h3>
-            <p class="text">
-                Participante de los Brunos. <br>
-                Bruno Mendez.
-            </p>
+            <p class="text"> <?php echo getStatus(); ?></p>
+            <a href="#" id="troll-status">¡Cambiame!</a>
         </div>
         <div class="reset">
             <a href="config.php">Modificar mi perfil</a>

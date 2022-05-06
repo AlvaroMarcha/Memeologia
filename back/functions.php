@@ -60,8 +60,11 @@ function existLogin($user, $pass)
 
 //Insert - Register
 function registerUser($user, $pass, $email)
-{
+{   
+    $go=false;
     $encrypted = sha1($pass);
+
+    //Verification user name
     $sql = "SELECT user FROM users WHERE user=:user";
     $base = getConnection();
     $sentencia = $base->prepare($sql);
@@ -71,22 +74,38 @@ function registerUser($user, $pass, $email)
     if ($sentencia->rowCount() == 1) {
         $GLOBALS["status"] = "User already exist";
     } else if ($sentencia->rowCount() == 0) {
-        $picpath="../users/profilePic/tobey.jpg";
-        $title = "Ningun titulo";
-        $exp = 0;
-        $sql = "INSERT INTO users (user, pass, title, experience, email, picpath) VALUES (:user, :pass, :title, :experience, :email, :picpath)";
+        //Verification usermail
+        $sql = "SELECT email FROM users WHERE email=:email";
         $sentencia = $base->prepare($sql);
-        $sentencia->bindParam(":user", $user);
-        $sentencia->bindParam(":pass", $encrypted);
-        $sentencia->bindParam(":title", $title);
-        $sentencia->bindParam(":experience", $exp);
         $sentencia->bindParam(":email", $email);
-        $sentencia->bindParam(":picpath", $picpath);
-
         $sentencia->execute();
 
-        $GLOBALS['status'] = "Registered";
+        if($sentencia->rowCount() == 1){
+            $GLOBALS['status']="Email already exist";
+        }else if($sentencia->rowCount() == 0) {
+            $picpath="../users/profilePic/tobey.jpg";
+            $title = "Ningun titulo";
+            $exp = 0;
+            $statusDB="Hey, mi primer tirote... Digo estado, estado, sí.";
+            $sql = "INSERT INTO users (user, pass, title, experience, email, picpath, status) VALUES (:user, :pass, :title, :experience, :email, :picpath, :status)";
+            $sentencia = $base->prepare($sql);
+            $sentencia->bindParam(":user", $user);
+            $sentencia->bindParam(":pass", $encrypted);
+            $sentencia->bindParam(":title", $title);
+            $sentencia->bindParam(":experience", $exp);
+            $sentencia->bindParam(":email", $email);
+            $sentencia->bindParam(":picpath", $picpath);
+            $sentencia->bindParam(":status", $statusDB);
+
+            $sentencia->execute();
+
+            $GLOBALS['status'] = "Registered";
+
+            $go=true;
+
+        }
     }
+    return $go;
 }
 
 //To get the user_ID
@@ -135,7 +154,7 @@ function getUserEmail($id_session, $user) {
 
 //Functions to get the user memepoints
 function getUserMemepoints(){
-
+    //In progress
 }
 
 //Functions to get data from database for the tests
@@ -421,6 +440,19 @@ function changeEmail($newEmail){
 }
 
 //Function to change picProfile
+function changePicProfile($newPath){
+    $base= getConnection();
+    $sql = "UPDATE users SET picpath=:newPath WHERE user=:user";
+    $userName = getUserName(session_id());
+    $sentencia=$base->prepare($sql);
+    $sentencia->bindParam(':newPath',$newPath);
+    $sentencia->bindParam(':user',$userName);
+    $sentencia->execute();
+
+    $GLOBALS['status'] = "User pic Changed";
+
+}
+
 //Function to get picProfile path
 function getUserPicPath() {
     //Connection with database
@@ -444,7 +476,67 @@ function getUserPicPath() {
 
 }
 
+//Function to change Status
+function changeStatus($newStatus){
+    $base=getConnection();
+    $sql="UPDATE users SET status=:newStatus WHERE user=:user";
+    $userName=getUserName(session_id());
+    $sentencia=$base->prepare($sql);
+    $sentencia->bindParam(':newStatus',$newStatus);
+    $sentencia->bindParam(':user',$userName);
+    $sentencia->execute();
 
+    $GLOBALS['status'] = "Status was changed successfully";
+}
+
+//Function to get the status
+function getStatus(){
+    $base=getConnection();
+    $sql="SELECT status FROM users WHERE user=:user";
+    $userName=getUserName(session_id());
+    $sentencia=$base->prepare($sql);
+    $sentencia->bindParam(':user',$userName);
+    $sentencia->execute();
+
+    $results=$sentencia->fetchAll();
+
+    $estado="";
+    foreach ($results as $value) {
+        $estado=$value['status'];
+
+    }
+
+    $GLOBALS['status'] = "Status was recovery successfully";
+
+    return $estado;
+
+}
+
+//Functions to get data from users by other users
+
+//Function to get follows
+function getFollow(){
+
+
+}
+
+//Function to get followers
+function getFollowers(){
+
+
+}
+
+//Function to get number of posts
+function getNumberPosts(){
+
+
+}
+
+//Function to get likes
+function getLikesUser(){
+
+
+}
 
 
 ?>

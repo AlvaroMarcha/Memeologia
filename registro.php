@@ -59,8 +59,13 @@
                         if (!empty($user) && !empty($pass) && !empty($email)) {
                             //Ahora hacemos la comparacion
                             $logs=registerUser($user, $pass, $email);
-                            echo $logs;
-                            header("location: inside/principal.php?user=$user");
+                            if($logs) {
+                                header("location: inside/principal.php?user=$user");
+                            }else{
+                                $status = "Usuario o Email ya existen.";
+                                $tag="<p class='incorrectas'>$status</p>";
+
+                            }
                         } else {
                             $status = "Rellena los campos";
                             $tag="<p class='rellena'>$status</p>";
