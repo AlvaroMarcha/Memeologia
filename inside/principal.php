@@ -11,6 +11,15 @@ $exp = getExpUser(getUsername(session_id()));
 $title = getTitleByExp(getUsername(session_id()), $exp);
 $userName=getUserName(session_id());
 $url=getUserPicPath();
+$statuss=getStatus();
+
+// Aqui se comprobara si el usuario ya cambio el estado la primera vez
+    // Code here
+
+// En caso de ser :true se escondera el boton de cambiame 
+    //Code here
+
+// Se añadira otro apartado en config.php para cambiar el estado.
 
 ?>
 <!DOCTYPE html>
@@ -23,6 +32,7 @@ $url=getUserPicPath();
     <link rel="stylesheet" href="../assets/css/global.css">
     <link rel="stylesheet" href="../assets/css/style.header.css">
     <link rel="stylesheet" href="../assets/css/style.inside.principal.css">
+    <link rel="stylesheet" href="../assets/css/style.general.pops.css">
     <title>Memeologia | Registro</title>
     <style>
     main {
@@ -35,16 +45,16 @@ $url=getUserPicPath();
 
 
     @media (min-width: 860px) {
-        main{
+        main {
             display: grid;
             grid-template-columns: 35% 1fr;
             grid-template-rows: auto auto auto auto auto;
-            grid-template-areas: 
-            'pic follow' 
-            'name posts'
-            'data posts'
-            'description posts'
-            'reset posts'
+            grid-template-areas:
+                'pic follow'
+                'name posts'
+                'data posts'
+                'description posts'
+                'reset posts'
             ;
 
 
@@ -54,16 +64,16 @@ $url=getUserPicPath();
     }
 
     @media (min-width: 1460px) {
-        main{
+        main {
             display: grid;
             grid-template-columns: 30% 1fr;
             grid-template-rows: auto auto auto auto auto;
-            grid-template-areas: 
-            'pic follow' 
-            'name posts'
-            'data posts'
-            'description posts'
-            'reset posts'
+            grid-template-areas:
+                'pic follow'
+                'name posts'
+                'data posts'
+                'description posts'
+                'reset posts'
             ;
 
 
@@ -73,16 +83,16 @@ $url=getUserPicPath();
     }
 
     @media (min-width: 1860px) {
-        main{
+        main {
             display: grid;
             grid-template-columns: 25% 1fr;
             grid-template-rows: auto auto auto auto auto;
-            grid-template-areas: 
-            'pic follow' 
-            'name posts'
-            'data posts'
-            'description posts'
-            'reset posts'
+            grid-template-areas:
+                'pic follow'
+                'name posts'
+                'data posts'
+                'description posts'
+                'reset posts'
             ;
 
 
@@ -117,13 +127,13 @@ $url=getUserPicPath();
     </header>
     <main>
         <img src="../assets/icons/todopoderosorey.png" width="50px" id="corona">
-        <div class="pic">
+        <div class="pic" id="profile">
             <img src="<?php echo $url; ?>" width="200px" height="200px">
         </div>
         <div class="name">
             <span>[<?php echo getUsername(session_id()); ?>]</span>
         </div>
-        <div class="follow">
+        <div class="follow" id="follow">
             <div class="followers">
                 <p>3 <br> Seguidores</p>
             </div>
@@ -134,7 +144,7 @@ $url=getUserPicPath();
                 <p>54 <br>Siguiendo</p>
             </div>
         </div>
-        <div class="data">
+        <div class="data" id="data">
             <div class="exp">
                 <p>Experiencia <br> <span class="exp"><?php echo $exp; ?></span></p>
             </div>
@@ -142,22 +152,53 @@ $url=getUserPicPath();
                 <p>Título <br> <?php echo $title; ?></p>
             </div>
         </div>
-        <div class="description">
+        <div class="description" id="description">
             <h3 class="title">Estado </h3>
-            <p class="text"> <?php echo getStatus(); ?></p>
-            <a href="#" id="troll-status">¡Cambiame!</a>
+            <p class="text" id="status-troll"><?php echo $statuss; ?></p>
+            <a href="javascript:troll()" id="troll-status">¡Cambiame!</a>
         </div>
         <div class="reset">
             <a href="config.php">Modificar mi perfil</a>
         </div>
 
-        <!-- POSTS DE LOS USUARIOS -->
-        <div class="posts">
-            here the post
+        <!-- PopUp Troll Status -->
+        <div id="base-popup" class="base-popup">
+            <div class="content-pop" id="content-pop">
+                <img src="../assets/img/shrek.gif" alt="shrek" width="100%" height="400px">
+            </div>
+            <div id="content-form">
+                <h2 class="inside">Hola! Esto es una pequeña broma de la página :) </h2>
+                <h3 class="inside">Introduce ahora tu nuevo estado y se actualizará!</h3>
+                <form action="principal.php" method="post">
+                    <textarea name="estado" cols="0" rows="10" placeholder="Introduce tu estado :)"></textarea>
+                    <button name="enviarEstatus" id="changeEstatusTroll">Establecer estado</button>
+                </form>
+                <!-- Aquí funcionalidad -->
+                <?php 
+                    // Comprobamos si se ha pulsado el boton del form 
+                    if(isset($_POST['enviarEstatus'])){
+                        $estado=$_POST['estado'];
+
+                        if(!empty($estado)){
+                            changeStatus($estado);
+                            $statuss=getStatus();
+                            echo "<script> alert('Tu estado se ha cambiado por: $statuss'); </script>";
+                            
+                        }
+                    }
+
+                ?>
+            </div>
         </div>
+
+        <!-- POSTS DE LOS USUARIOS -->
+        <!-- <div class="posts">
+            here the post
+        </div> -->
 
 
         <script src="../js/menu.js"></script>
+        <script src="../js/functions.js"></script>
         <script>
         var cinco = getElementById("5");
 

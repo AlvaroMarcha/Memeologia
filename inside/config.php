@@ -5,6 +5,8 @@ require "../back/functions.php";
 $name=getUserName(session_id());
 $email=getUserEmail(session_id(), $name);
 $url=getUserPicPath();
+$mensaje= "<p class='messagePass'>Introduce una nueva contraseña</p>";
+$mensajeMail="<p class='messagePass'>Introduce un nuevo email</p>";
 
 ?>
 <!DOCTYPE html>
@@ -22,7 +24,7 @@ $url=getUserPicPath();
     main {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows:auto auto auto auto;
+        grid-template-rows: auto auto auto auto;
         grid-template-areas:
             'profile'
             'name'
@@ -84,7 +86,9 @@ $url=getUserPicPath();
                 <form action="config.php" method="post" enctype="multipart/form-data" class="form1">
                     <!-- Upload new image -->
                     <label for="file" id="label">
-                        <span><img src="../assets/icons/uploadimg.png"><p>Seleccionar</p></span>
+                        <span><img src="../assets/icons/uploadimg.png">
+                            <p>Seleccionar</p>
+                        </span>
                     </label><br>
                     <input type="file" name="imagen" id="file">
                     <input type="submit" value="Subir" class="submit" name="submitProfile">
@@ -93,88 +97,111 @@ $url=getUserPicPath();
                 <?php 
                     // Comprobamos si se ha pulsado el boton del form 
                     if(isset($_POST['submitProfile'])){
-                        // File data
-                        $fileTmpPath=$_FILES['imagen']['tmp_name'];
-                        $fileName=$_FILES['imagen']['name'];
-                        $fileSize=$_FILES['imagen']['size'];
-                        $fileType=$_FILES['imagen']['type'];
-                        $fileNameCmps=explode('.',$fileName);
-                        $fileExtension=strtolower(end($fileNameCmps));
-                        $newFileName=$name.'.'.$fileNameCmps[1];
 
-                        // Restringir archivos (Por ahora jpg, jpge y png);
-                        $allowedExtensions=array("jpg", "jpge", "png");
+                        if(!empty($_POST['submitProfile'])){
+                            // File data
+                            $fileTmpPath=$_FILES['imagen']['tmp_name'];
+                            $fileName=$_FILES['imagen']['name'];
+                            $fileSize=$_FILES['imagen']['size'];
+                            $fileType=$_FILES['imagen']['type'];
+                            $extension=explode(".", $fileName);
+                            $newFileName=$name.".png";
 
-                        if(in_array($fileExtension, $allowedExtensions)){
                             $uploadFileDir="../users/profilePic/";
                             $dest_path=$uploadFileDir.$newFileName;
 
                             if(move_uploaded_file($fileTmpPath, $dest_path)){
-                                // Connecto to the DB
                                 changePicProfile($dest_path);
-                                header("location: config.php#pic");
-                            }else{
-
+                                header("location: config.php?#pic");
                             }
-
                         }
-
-
-
-
-                        
-
                     }
-                
-                
-                
                 ?>
             </div>
         </div>
-        <div class="name">
-            <div class="toChangeName">
-                <form action="">
-                    <!-- Change name -->
-                    <input type="text" name="newName" id="newName" value="<?php echo $name; ?>">
-                    <input type="submit" value="Establecer">
-                </form>
-                <!-- Aquí funcionalidad -->
-                <?php 
 
-                
-                
-                
-                ?>
-            </div>
-        </div>
+        <!-- CONTRASEÑA -->
+
         <div class="password">
             <div class="toChangePass">
-                <form action="">
-                    <!-- Change password -->
-                    <input type="password" name="newPass" id="newPass" value="***********">
-                    <input type="submit" value="Establecer">
-                </form>
-                <!-- Aquí funcionalidad -->
-                <?php 
-
-                
-                
-                
-                ?>
+                <input type="password" id="newPass" value="***********" disabled>
+                <input type="submit" value="Cambiar Password" onclick="openPopPass()">
             </div>
         </div>
+        <div class="popPass" id="popPass">
+            <a href="config.php#popPass" id="closePopPass" onclick="closePopPass()">X</a>
+            <form action="config.php" method="post">
+                <!-- Change password confirm-->
+                <input type="password" name="newPass1" value="" placeholder="Nueva contraseña">
+                <input type="password" name="newPass2" value="" placeholder="Repetir contraseña">
+                <input type="submit" value="Nueva contraseña" name="enviarContra">
+                <?php
+                    echo $mensaje;
+                ?>
+            </form>
+            <!-- Aquí funcionalidad -->
+            <?php 
+                    // Comprobamos si se ha pulsado el boton del form 
+                    if(isset($_POST['enviarContra'])){
+                        $campo1=$_POST['newPass1'];
+                        $campo2=$_POST['newPass2'];
+
+                        if(!empty($campo1) && !empty($campo2)){
+                            if(changePasswordAndValidation($campo1,$campo2)){
+                                echo "<script> alert('success')</script>";
+                            }else{
+                                // echo "<script> alert('Las contraseñas no eran iguales')</script>";
+                            }
+                        }else{
+                            echo "<script> alert('Rellena los campos')</script>";
+                        }
+                    }
+            ?>
+        </div>
+
+        <!-- EMAIL -->
+
         <div class="email">
             <div class="toChangeEmail">
-                <form action="">
-                    <!-- Change name -->
-                    <input type="email" name="newEmail" id="newEmail" value="<?php echo $email; ?>">
-                    <input type="submit" value="Establecer">
-                </form>
+                <!-- Change email -->
+                <input type="email" name="newEmail" id="newEmail" value="<?php echo $email; ?>" disabled>
+                <input type="submit" value="Cambiar email" onclick="openPopEmail()">
             </div>
+        </div>
+        <div class="popEmail" id="popEmail">
+            <a href="config.php#popEmail" id="closePopPass" onclick="closePopEmail()">X</a>
+            <form action="config.php" method="post">
+                <!-- Change password confirm-->
+                <input type="email" name="newEmail1" value="" placeholder="Nuevo email">
+                <input type="email" name="newEmail2" value="" placeholder="Repetir email">
+                <input type="submit" value="Nuevo email" name="enviarEmail">
+                <?php
+                    echo $mensajeMail;
+                ?>
+            </form>
+            <!-- Aquí funcionalidad -->
+            <?php 
+                    // Comprobamos si se ha pulsado el boton del form 
+                    if(isset($_POST['enviarEmail'])){
+                        $campoE1=$_POST['newEmail1'];
+                        $campoE2=$_POST['newEmail2'];
+
+                        if(!empty($campoE1) && !empty($campoE2)){
+                            if(changeEmailAndValidation($campoE1,$campoE2)){
+                                echo "<script> alert('success')</script>";
+                            }else{
+                                echo "<script> alert('Las emails no eran iguales')</script>";
+                            }
+                        }else{
+                            echo "<script> alert('Rellena los campos')</script>";
+                        }
+                    }
+            ?>
         </div>
 
 
         <script src="../js/menu.js"></script>
+        <script src="../js/functions.js"></script>
         <script>
         var cinco = getElementById("5");
 

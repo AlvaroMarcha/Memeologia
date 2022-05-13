@@ -6,10 +6,6 @@ En la primera version vamos a dejarlo como esta y la idea se tomara en cuenta
 si el usuario existe en la base de datos. Pero esta comprobacion se hace manualmente
 por el momento. Hasta que se implemente el nuevo metodo. 
 
-En esta primera version solo se piden los datos de usuario y contraseña.
-Esto probablemente cambie, ya que para recuperar la contraseña en caso de perderla, es 
-necesario tener una cuenta de email para poder recuperarla.
-
 Si se implementa el email, se debe comprobar el nombre de usuario e email para 
 poder enviar un mensaje de contacto, tanto de contacto por problemas como por
 contacto por ideas. 

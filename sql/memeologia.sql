@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-03-2022 a las 14:23:46
--- Versión del servidor: 10.4.14-MariaDB
--- Versión de PHP: 7.4.10
+-- Tiempo de generación: 06-05-2022 a las 16:31:09
+-- Versión del servidor: 10.4.22-MariaDB
+-- Versión de PHP: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -348,8 +348,8 @@ CREATE TABLE `p_test_4` (
 --
 
 CREATE TABLE `sessions` (
-  `id_session` varchar(100) NOT NULL,
-  `user` varchar(70) NOT NULL
+  `id_session` varchar(150) NOT NULL,
+  `user` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -357,10 +357,185 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id_session`, `user`) VALUES
-('73t63qthn0f9apk1ktuuqevr75', 'admin'),
-('a1hqc1hde3bgq1ovrci7eqb17m', 'Arkamob'),
-('ekoqbign2858mbknfbghlc9cum', 'neilrc'),
-('j5v14sl1bghgc8og6qvb4e3bo5', 'mario');
+('80q4i8iustu1dtn6kigl8kmgtd', 'Alan'),
+('ejfe2hci42rhiiupmv6p60vnpo', 'AlanMarcha'),
+('ejfe2hci42rhiiupmv6p60vnpo', 'AlanMarcha'),
+('ejfe2hci42rhiiupmv6p60vnpo', 'AlanMarcha'),
+('ejfe2hci42rhiiupmv6p60vnpo', 'AlanMarcha'),
+('ejfe2hci42rhiiupmv6p60vnpo', 'AlanMarcha'),
+('ejfe2hci42rhiiupmv6p60vnpo', 'AlanMarcha'),
+('ejfe2hci42rhiiupmv6p60vnpo', 'AlanMarcha'),
+('ejfe2hci42rhiiupmv6p60vnpo', 'AlanMarcha'),
+('ejfe2hci42rhiiupmv6p60vnpo', 'AlanMarcha'),
+('ejfe2hci42rhiiupmv6p60vnpo', 'AlanMarcha'),
+('ejfe2hci42rhiiupmv6p60vnpo', 'AlanMarcha'),
+('ejfe2hci42rhiiupmv6p60vnpo', 'AlanMarcha'),
+('ejfe2hci42rhiiupmv6p60vnpo', 'AlanMarcha'),
+('ejfe2hci42rhiiupmv6p60vnpo', 'AlanMarcha'),
+('ejfe2hci42rhiiupmv6p60vnpo', 'AlanMarcha'),
+('ejfe2hci42rhiiupmv6p60vnpo', 'AlanMarcha'),
+('ejfe2hci42rhiiupmv6p60vnpo', 'AlanMarcha'),
+('ejfe2hci42rhiiupmv6p60vnpo', 'AlanMarcha'),
+('ejfe2hci42rhiiupmv6p60vnpo', 'AlanMarcha'),
+('ejfe2hci42rhiiupmv6p60vnpo', 'AlanMarcha'),
+('ejfe2hci42rhiiupmv6p60vnpo', 'AlanMarcha'),
+('u9bccj09lsguu4d1jnf9sn1s4l', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha'),
+('vloha8r8uiggaaql8f7191mg5t', 'AlanMarcha');
 
 -- --------------------------------------------------------
 
@@ -408,20 +583,23 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `user` varchar(50) NOT NULL,
   `pass` varchar(70) NOT NULL,
+  `email` varchar(150) NOT NULL,
+  `picpath` varchar(100) NOT NULL,
   `title` varchar(40) NOT NULL,
-  `experience` int(11) NOT NULL
+  `status` varchar(300) NOT NULL,
+  `experience` int(11) NOT NULL,
+  `memepoints` int(11) NOT NULL,
+  `countnames` int(2) NOT NULL,
+  `isstatuschanged` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `user`, `pass`, `title`, `experience`) VALUES
-(10, 'admin', '011c945f30ce2cbafc452f39840f025693339c42', 'Interesado', 298),
-(12, 'alan', '011c945f30ce2cbafc452f39840f025693339c42', 'Ningun titulo', 0),
-(13, 'Arkamob', '9d65c4a27a601e62a599f3059159476cd76933a4', 'Reconocido', 474),
-(14, 'mario', '011c945f30ce2cbafc452f39840f025693339c42', 'No tienes ningun titulo', 28),
-(15, 'neilrc', 'feb723d205aed863d83f163d434fc87df087d239', 'Noob', 115);
+INSERT INTO `users` (`id`, `user`, `pass`, `email`, `picpath`, `title`, `status`, `experience`, `memepoints`, `countnames`, `isstatuschanged`) VALUES
+(23, 'Alan', 'ff001565a5527da47615830051a35cfca9ea8803', 'alvarochavas1994@gmail.com', '../users/profilePic/Alan.png', 'Sin título', 'Eres lo que lees.', 0, 0, 0, 0),
+(24, 'AlanMarcha', '011c945f30ce2cbafc452f39840f025693339c42', 'alvaro@gmail.com', '../users/profilePic/AlanMarcha.jpg', 'Sin título', 'Eres lo que lees.', 0, 0, 0, 0);
 
 --
 -- Índices para tablas volcadas
@@ -528,12 +706,6 @@ ALTER TABLE `p_test_3`
 --
 ALTER TABLE `p_test_4`
   ADD PRIMARY KEY (`id_question`);
-
---
--- Indices de la tabla `sessions`
---
-ALTER TABLE `sessions`
-  ADD PRIMARY KEY (`id_session`);
 
 --
 -- Indices de la tabla `titles`
@@ -663,7 +835,7 @@ ALTER TABLE `titles`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

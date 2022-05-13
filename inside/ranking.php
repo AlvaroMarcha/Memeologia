@@ -56,56 +56,26 @@ $name=getUserName(session_id());
     </footer> -->
 
 
-    <div class="toUploadPicProfile">
-                <form action="ranking.php" method="post" enctype="multipart/form-data" class="form1">
-                    <!-- Upload new image -->
-                    <label for="file" id="label">
-                        <span><img src="../assets/icons/uploadimg.png"><p>Seleccionar</p></span>
-                    </label><br>
-                    <input type="file" name="imagen" id="file">
-                    <input type="submit" value="Subir" class="submit" name="submitProfile">
+    <div class="name">
+            <div class="toChangeName">
+                <form action="ranking.php" method="post">
+                    <!-- Change name -->
+                    <input type="text" name="newName" id="newName" value="<?php echo $name; ?>">
+                    <input type="submit" value="Nuevo nombre" name="name">
                 </form>
                 <!-- Aquí funcionalidad -->
                 <?php 
-                    // Comprobamos si se ha pulsado el boton del form 
-                    if(isset($_POST['submitProfile'])){
-                        // File data
-                        $fileTmpPath=$_FILES['imagen']['tmp_name'];
-                        $fileName=$_FILES['imagen']['name'];
-                        $fileSize=$_FILES['imagen']['size'];
-                        $fileType=$_FILES['imagen']['type'];
-                        $fileNameCmps=explode('.',$fileName);
-                        $fileExtension=strtolower(end($fileNameCmps));
-
-                        // echo "1";
-
-                        $newFileName=$name.'.'.$fileNameCmps[1];
-
-                        echo $newFileName;
-
-                        // Restringir archivos (Por ahora jpg, jpge y png);
-                        $allowedExtensions=array("jpg", "jpge", "png");
-
-                        if(in_array($fileExtension, $allowedExtensions)){
-                            $uploadFileDir="../users/profilePic/";
-                            $dest_path=$uploadFileDir.$newFileName;
-
-                            echo "Ruta: ".$uploadFileDir;
-
-                            if(move_uploaded_file($fileTmpPath, $dest_path)){
-                                echo "El archivo se ha subido correctamente";
-
-                            }else{
-                                echo "Error al subir el archivo";
-
-                            }
-
-                        }
-
-
-
+                    if(isset($_POST['name'])){
+                        $newName=$_POST['newName'];
 
                         
+
+                        echo changeUser($newName);
+                        // header("Location: ranking.php");
+
+                        echo $newName;
+                        
+
 
                     }
                 
@@ -113,6 +83,7 @@ $name=getUserName(session_id());
                 
                 ?>
             </div>
+        </div>
 </body>
 
 </html>

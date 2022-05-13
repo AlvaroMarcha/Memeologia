@@ -86,7 +86,7 @@ function registerUser($user, $pass, $email)
             $picpath="../users/profilePic/tobey.jpg";
             $title = "Ningun titulo";
             $exp = 0;
-            $statusDB="Hey, mi primer tirote... Digo estado, estado, sí.";
+            $statusDB="Eres lo que lees";
             $sql = "INSERT INTO users (user, pass, title, experience, email, picpath, status) VALUES (:user, :pass, :title, :experience, :email, :picpath, :status)";
             $sentencia = $base->prepare($sql);
             $sentencia->bindParam(":user", $user);
@@ -391,11 +391,12 @@ function getTitle($exp)
 function changeUser($newUser){
     //Connection with database
     $base=getConnection();
-    $sql="UPDATE users SET user=:newUser WHERE user=:oldUser";
+    $sql="UPDATE users SET user=:newUser WHERE id=:userId";
     $userName=getUserName(session_id());
+    $userId=getUserId($userName);
     $sentencia=$base->prepare($sql);
     $sentencia->bindParam(':newUser',$newUser);
-    $sentencia->bindParam(':oldUser',$userName);
+    $sentencia->bindParam(':userId', $userId);
     $sentencia->execute();
 
     $GLOBALS['status'] = "User name Changed";
@@ -405,38 +406,63 @@ function changeUser($newUser){
 }
 
 //Function to change password
-function changePassword($newPass){
-    //Connection with database
-    $base= getConnection();
-    $sql="UPDATE users SET pass=:newPass WHERE user=:user";
-    $userName=getUserName(session_id());
-    //Encrypt password
-    $encrypted = sha1($newPass);
-    $sentencia=$base->prepare($sql);
-    $sentencia->bindParam(':newPass',$newPass);
-    $sentencia->bindParam(':user',$userName);
-    $sentencia->execute();
+function changePasswordAndValidation($newPass, $repeatedPass){
+    $enter=false;
+    //Comprobation
+    if($newPass == $repeatedPass){
+        //Connection with database
+        $base= getConnection();
+        $sql="UPDATE users SET pass=:newPass WHERE user=:user";
+        $userName=getUserName(session_id());
+        //Encrypt password
+        $encrypted = sha1($newPass);
+        $sentencia=$base->prepare($sql);
+        $sentencia->bindParam(':newPass',$encrypted);
+        $sentencia->bindParam(':user',$userName);
+        $sentencia->execute();
 
-    $GLOBALS['status'] = "User password Changed";
+        $GLOBALS['status'] = "User password Changed";
 
-    
+        $enter=true;
 
+    }else{
+        $GLOBALS['status'] = "User password not Changed";
+
+        $enter=false;
+
+    }
+
+    return $enter;
 
 }
 
 //Function to change email address
-function changeEmail($newEmail){
-    //Connection with database
-    $base= getConnection();
-    $sql="UPDATE users SET email=:newEmail WHERE user=:user";
-    $userName=getUserName(session_id());
-    $sentencia=$base->prepare($sql);
-    $sentencia->bindParam(':newEmail',$newEmail);
-    $sentencia->bindParam(':user',$userName);
-    $sentencia->execute();
+function changeEmailAndValidation($newEmail, $repeatedEmail){
+    $enter=false;
+    //Comprobation
+    if($newEmail == $repeatedEmail){
+        //Connection with database
+        $base= getConnection();
+        $sql="UPDATE users SET email=:newEmail WHERE user=:user";
+        $userName=getUserName(session_id());
+        $sentencia=$base->prepare($sql);
+        $sentencia->bindParam(':newEmail',$newEmail);
+        $sentencia->bindParam(':user',$userName);
+        $sentencia->execute();
 
-    $GLOBALS['status'] = "User email Changed";
+        $GLOBALS['status'] = "User email Changed";
 
+        $enter=true;
+
+    }else{
+
+        $GLOBALS['status'] = "User email not Changed";
+
+        $enter=false;
+
+    }
+
+    return $enter;
 }
 
 //Function to change picProfile
@@ -479,7 +505,7 @@ function getUserPicPath() {
 //Function to change Status
 function changeStatus($newStatus){
     $base=getConnection();
-    $sql="UPDATE users SET status=:newStatus WHERE user=:user";
+    $sql="UPDATE users SET status=:newStatus, isstatuschanged=1 WHERE user=:user";
     $userName=getUserName(session_id());
     $sentencia=$base->prepare($sql);
     $sentencia->bindParam(':newStatus',$newStatus);
@@ -511,6 +537,22 @@ function getStatus(){
     return $estado;
 
 }
+
+// PASSWORDs
+// Functions to recovery passwords
+function recoveryPassword(){
+
+
+}
+
+// Function to generate new Password to sent email to user
+function generateTemporalPass(){
+    
+
+}
+
+
+
 
 //Functions to get data from users by other users
 
