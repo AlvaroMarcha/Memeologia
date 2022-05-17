@@ -1,0 +1,47 @@
+En el back-office se utilizará para administrar la web.
+Tanto para añadir contenidos nuevos en apartados de publicaciones
+por categorias, etc. 
+
+- Crear un login para poder acceder
+- Crear una interfaz para gestionar todo 
+- Estados de las bases de datos
+- Administrar cuentras de administrador 
+- Actualizar apartados de noticias y actualizaciones
+- Poder gestionar cuentas... 
+- Recuperaciones de contraseñas...
+- Dar memepoints a usuarios. 
+- Gestionar la tienda virtual para comprar cosas con memepoints
+- Bloqueo de cuentas... //Temporales o permanetes 
+- A nivel de foro, gestionar las publicaciones. 
+- Añadir publicaciones sobre memes
+- 
+
+
+COSAS A DESARROLLAR A GROSO MODO
+- Tienda para los memepoints
+- Back-office
+- Foro memeologico
+- Crear registros 
+
+
+////////////////////////////////////////////////////////////////
+Importante!!!
+Establecer que tipos de permisos tienen los administradores
+ - (cu) Crear usuarios
+ - (du) Eliminar usuarios
+ - (uu) Modificar usuarios
+ - (ca) Crear administradores
+ - (da) Eliminar administradores
+ - (ua) Modificar administradores
+ - (cp) Crear publicacion 
+ - (dp) Eliminar publicacion
+ - (up) Modificar publicacion
+
+ - (gp) Generar nuevas contraseñas
+ - (dm) Donar memepoints
+ - (su) Soporte para los usuarios
+ - (ar) Acceso a los registros 
+
+
+
+ - (aa) Todos los permisos

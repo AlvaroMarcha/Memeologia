@@ -540,15 +540,88 @@ function getStatus(){
 
 // PASSWORDs
 // Functions to recovery passwords
-function recoveryPassword(){
+function recoveryPassword($user, $email){
+    //BOOLEAN
+    $go=false;
+    //Get the temporary password
+    $tmpPass=generateTemporalPass();
+    $asunt="Recuperacion de contraseña";
+    $message="Hola $user, \n Has solicitado recuperar tu contraseña. Si no has sido tú, 
+    por seguridad la hemos cambiado, sigue los siguientes pasos para poder cambiarla 
+    y poner la que quieras. \n En caso de haber sido tú sigue los mismos pasos. 
+    Tu nueva contraseña temporal es: <span class='pass'>tmpPass</span> .\n \n Te aconsejamos que la cambies lo antes posible. \n
+    Un saludo, el equipo memeologico.";
+    //Important
+    $header="Content-type:text/html;charset=UTF-8" . "\r\n"."From: memeologo@memeologia.com";
 
+    $content='
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HTML Email Template</title>
+        <style>
+            main{
+                display: block;
+                width: 100%;
+                height: max-content;
+                margin: 0 auto;
+                border: 5px solid black;
+            }
+            h1{
+                display: block;
+                width: 100%;
+                height: max-content;
+                margin: 0 auto;
+                border-bottom: 3px solid black;
+            }
+            div.content{
+                display: block;
+                width: 100%;
+                height: max-content;
+                margin: 0 auto;
+                padding: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <h1>MEMEOLOGIA.COM</h1>
+            <h2>Recuperación de Contraseña</h2>
+            <div class="content">'.
+                $message.'
+            </div>
+        </main>
+    </body>
+    </html>
+    ';
 
+    //Now sent email to user 
+    if(mail($email, $asunt, $content)){
+        $go=true;
+    }else{
+        $go=false;
+    }
+
+    //Now we need to set the password and sent an email to user
+    $base = getConnection();
+    $sql="UPDATE users SET pass=:tmpPass WHERE user=:user and email=:email";
+    $sentencia= $base->prepare($sql);
+    $sentencia->bindParam(':user',$user);
+    $sentencia->bindParam(':email',$email);
+    $sentencia->bindParam(':pass',$tmpPass);
+    $sentencia->execute();
+
+    
+    return $go;
 }
 
 // Function to generate new Password to sent email to user
 function generateTemporalPass(){
-    
-
+    $pass=sha1(generatePass());
+    return $pass;
 }
 
 
@@ -579,6 +652,85 @@ function getLikesUser(){
 
 
 }
+
+
+
+// FUNCTIONS TO ACCESS AND ADMIN THE BACK-OFFICE 
+//Function to generate admin password
+function generatePass(){
+    $dataArray=array("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
+    "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", 
+    "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", 
+    "t", "u", "v", "w", "x", "y", "z", "0", "1", "2", "3", "4", "5", "6", "7", "8", 
+    "9");
+    //Password
+    $passwordArray=array();
+
+    for($i=0; $i<20; $i++){
+        array_push($passwordArray, $dataArray[rand(0, 61)]);
+    }
+
+    $password=implode($passwordArray);
+
+    $GLOBALS['status'] = "Password was generated successfully";
+
+    return $password;
+}
+
+
+//Function to register new admin 
+function setAdminPass($userAdmin){
+    //Importants vars 
+    $mail="alvarochavas1994@gmail.com";
+    $asunt="Contraseña para $userAdmin";
+    //New password 
+    $pass=generatePass();
+
+    $base = getConnection();
+    $sql="UPDATE admins SET password=:pass WHERE user=:userAdmin";
+    $sentencia= $base->prepare($sql);
+    $sentencia->bindParam(':userAdmin',$userAdmin);
+    $sentencia->bindParam(':pass',$pass);
+    $sentencia->execute();
+
+    $message="La contraseña actual de $userAdmin es: ".$pass;
+
+    //Sent email to administrador 
+    mail($mail, $asunt, $message);
+
+    $GLOBALS['status'] = "Admin password has been registered and sent";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ?>

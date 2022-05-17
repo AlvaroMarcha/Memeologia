@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="assets/css/style.header.css">
     <link rel="stylesheet" href="assets/css/style.forms.css">
     <link rel="shortcut icon" href="assets/icons/icono.ico" type="image/x-icon">
-    <title>Inicio de Sesión</title>
+    <title>Admin</title>
 
     <style>
     main {
@@ -41,10 +41,10 @@
         </div>
     </header>
     <main>
-        <h2 class="title">Iniciar Sesión</h2>
+        <h2 class="title">Admin</h2>
         <div class="form">
-            <form action="login.php" method="POST">
-                <input type="text" name="user" placeholder="Usuario" autocomplete="off"><br>
+            <form action="admin.php" method="POST">
+                <input type="text" name="user" placeholder="Admininistrador" autocomplete="off"><br>
                 <input type="password" name="pass" placeholder="Contraseña" autocomplete="off"><br>
                 <div class="button">
                     <button type="submit" name="enviar">Entrar</button>
@@ -57,27 +57,24 @@
                         $pass = $_POST['pass'];
                         if (!empty($user) && !empty($pass)) {
                             //Ahora hacemos la comparacion
-                            if (existLogin($user, $pass)) {
-                                // header("location: memeologia.com/inside/principal.php?user=$user");
-                                header("location: inside/principal.php?user=$user");
-                                // echo "Esta correcto aqui - Es tema de la redireccion";
-                            } else {
-                                $status = "Las credenciales son incorrectas";
-                                $tag="<p class='incorrectas'>$status</p>";
-                            }
+                            // if (existLogin($user, $pass)) {
+                            //     header("location: inside/principal.php?user=$user");
+
+                            // } else {
+                            //     $status = "Credenciales incorrectas. Sino puedes entrar ponte en contacto con @alan.vicent8494";
+                            //     $tag="<p class='incorrectas'>$status</p>";
+                            // }
                         } else {
-                            $status = "Rellena los campos";
+                            $status = "Debes rellenar todos los campos";
                             $tag="<p class='rellena'>$status</p>";
                         }
                     } else {
                         $status = "Introduce tus credenciales";
-                        $tag="<p class='introduce'>$status</p>";
+                        $tag="<p class='introduce'>$status admin</p> ";
                     }
                     ?>
                         <?php  echo $tag; ?>
                     </div>
-                    <a href="recovery.php">No mames lalo, ¿perdiste la contraseña?</a><br>
-                    <a href="admin.php">¿Eres administrador?</a>
             </form>
         </div>
     </main>
@@ -101,5 +98,7 @@
     </footer>
     <script src="js/menu.js"></script>
 </body>
-
+<form action="sand.php" method="post">
+<button name="establecer">Establecer</button>
+</form>
 </html>
