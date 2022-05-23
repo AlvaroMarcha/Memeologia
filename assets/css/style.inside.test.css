@@ -1,5 +1,7 @@
 main .container{
-    background: linear-gradient(rgb(2, 2, 2), rgb(0, 107, 194));
+    background: linear-gradient(rgba(0, 0, 0, 0.692), rgba(65, 2, 2, 0.795));
+    /* background: linear-gradient(rgb(179, 154, 15), rgb(0, 171, 238)); */
+    /* background: linear-gradient(rgba(0, 0, 0, 0.692), rgb(0, 54, 116)); */
     display: block;
     width: 100%;
     height: max-content;
@@ -20,63 +22,76 @@ main .container{
 }
 
 .container div.principal{
-    background-color: rgba(0, 0, 0, 0.61);
+    background-color: rgba(22, 21, 21, 0);
     color: white;
     display: block;
     width: 90%;
     height: max-content;
     margin: 0 auto;
     padding: 20px;
+
     
 
     
 }
 
+.unop{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+}
+
+.lastp{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+
 .one{
-    border-radius: 10px;
-    color: red;
+    border-radius: 10%;
+    color: rgba(255, 0, 0, 0.651);
     cursor: pointer;
 }
 
 .two{
-    border-radius: 10px;
-    color: yellow;
+    border-radius: 10%;
+    color: rgba(255, 255, 0, 0.664);
     cursor: pointer;
 }
 
 .three{
-    border-radius: 10px;
-    color: green;
+    border-radius: 10%;
+    color: rgba(0, 128, 0, 0.664);
     cursor: pointer;
 }
 
 .four{
-    border-radius: 10px;
-    color: cyan;
+    border-radius: 10%;
+    color: rgba(0, 255, 255, 0.671);
     cursor: pointer;
 }
 
 .one:hover{
     color: red;
-    box-shadow: inset 0px 5px 5px rgba(255, 0, 0, 0.671);
+    box-shadow: 0px 5px 5px rgba(255, 0, 0, 0.671);
     cursor: pointer;
 }
 
 .two:hover{
     color: yellow;
-    box-shadow: inset 0px 5px 5px yellow;
+    box-shadow: 0px 5px 5px yellow;
     cursor: pointer;
 }
 
 .three:hover{
     color: green;
-    box-shadow: inset 0px 5px 5px green;
+    box-shadow: 0px 5px 5px green;
     cursor: pointer;
 }
 
 .four:hover{
     color: cyan;
-    box-shadow: inset 0px 5px 5px cyan;
+    box-shadow: 0px 5px 5px cyan;
     cursor: pointer;
 }
 
@@ -88,12 +103,16 @@ main .container{
     padding: 10px;
     text-align: center;
 
+    transition: all 1s ease;
+
 }
 
 .links{
     display: block;
     width: 100%;
     height:max-content;
+
+    transition: all 1s ease;
 
 }
 
@@ -102,7 +121,7 @@ main .container{
     display: block;
     width: 100%;
     height:50px;
-    color: white;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     padding: 4%;
 
@@ -110,14 +129,139 @@ main .container{
 
 }
 
-.links a:hover{
+.links-one a:hover{
+    display: block;
+    width: 100%;
+    height:50px;
+    color: rgb(0, 183, 255);
+    text-decoration: none;
+
+    box-shadow: inset 400px 0px 0px 1px rgba(206, 0, 0, 0.596);
+
+
+}
+
+.links-two a:hover {
     display: block;
     width: 100%;
     height:50px;
     color: rgb(0, 195, 255);
     text-decoration: none;
 
-    box-shadow: inset 400px 0px 0px 1px rgba(255, 255, 255, 0.219);
+    box-shadow: inset 400px 0px 0px 1px rgba(156, 133, 4, 0.623);
 
+
+}
+
+.links-three a:hover{
+    display: block;
+    width: 100%;
+    height:50px;
+    color: rgb(0, 195, 255);
+    text-decoration: none;
+
+    box-shadow: inset 400px 0px 0px 1px rgba(0, 158, 26, 0.555);
+
+
+}
+
+.links-four a:hover{
+    display: block;
+    width: 100%;
+    height:50px;
+    color: rgb(0, 195, 255);
+    text-decoration: none;
+
+    box-shadow: inset 400px 0px 0px 1px rgba(0, 158, 163, 0.219);
+
+
+}
+
+
+details summary {
+    transition: all 1s ease;
+
+}
+
+.negroP{
+    display: block;
+    width: 100%;
+    height:50px;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+    background-color:rgba(255, 255, 255, 0.993);
+
+    transition: all 1s ease;
+
+}
+
+.negroP:hover{
+    color: rgb(255, 255, 255);
+    box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.671);
+    cursor: pointer;
+
+}
+
+.lgtb{
+    display: block;
+    width: 100%;
+    height:50px;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+
+    transition: all 0.1s ease;
+
+
+}
+
+.lgtb:hover{
+    box-shadow: 0px 10px 5px red,
+    0px 15px 5px orange,
+    0px 25px 5px yellow,
+    0px 35px 5px green,
+    0px 45px 5px blue,
+    0px 55px 5px purple
+    ;
+    cursor: pointer;
+
+}
+
+.negro{
+    color: black;
+
+}
+
+.L{
+    color: red;
+}
+
+.G{
+    color: orange;
+}
+
+.T{
+    color: yellow;
+
+}
+
+.B{
+    color: green;
+
+}
+
+.I{
+    color: rgb(0, 119, 255);
+
+}
+
+.Q{
+    color: purple;
+
+}
+
+.plus{
+    color: white;
 
 }

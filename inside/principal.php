@@ -135,13 +135,13 @@ $statuss=getStatus();
         </div>
         <div class="follow" id="follow">
             <div class="followers">
-                <p>3 <br> Seguidores</p>
+                <p>0 <br> Seguidores</p>
             </div>
             <div class="likes">
-                <p>56 <br> Me gustas</p>
+                <p>0 <br> Me gustas</p>
             </div>
             <div class="following">
-                <p>54 <br>Siguiendo</p>
+                <p>0 <br>Siguiendo</p>
             </div>
         </div>
         <div class="data" id="data">

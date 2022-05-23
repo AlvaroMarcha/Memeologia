@@ -250,7 +250,22 @@ $local = "";
         </script>
     </main>
     <footer>
-        <p>Footer</p>
+        <div class="social">
+            <div class="insta">
+                <a href=""><img src="../../assets/icons/instagram-icon.png" alt="" width="50px"></a><br>
+                <span>alan.vicent8494</span>
+            </div>
+            <div class="twitter">
+                <a href=""><img src="../../assets/icons/twitter-icon.png" alt="" width="50px"></a><br>
+                <span>alan.vicent8494</span>
+            </div>
+        </div>
+        <div class="colab">
+            <p>Colaborar en la página <a href="#">Contáctame</a></p>
+        </div>
+        <div class="final-footer">
+            Creado por alguien que sabe mucho de memes <br> MEMEOLOGIA 2022 &copy;
+        </div>
     </footer>
 </body>
 

@@ -50,7 +50,7 @@ function closePopEmail(){
 // ESTADO
 //functiones para el cambio de los estados "Eres lo que lees, puto el que lo lea".
 function troll(){
-    statusTroll.innerHTML="Puto el que lo lea. <br>";
+    statusTroll.innerHTML="Esto es un texto troll :) . <br>";
     statusTroll.style.color="rgb(252, 194, 3)";
     statusTroll.style.fontWeight="bolder";
     statusTroll.style.fontSize="30px";

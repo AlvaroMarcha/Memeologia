@@ -1,8 +1,8 @@
 main{
-    background: linear-gradient(black, white);
+    background: linear-gradient(black, rgba(0, 125, 134, 0.993));
     color: white;
     display: grid;
-    width: 90%;
+    width: 100%;
     height: max-content;
     margin: auto;
 
@@ -40,7 +40,7 @@ form h3{
 form .form-c{
     background-color: rgba(0, 125, 134, 0.993);
     display: block;
-    width: 100%;
+    width: 90%;
     height: max-content;
     margin: auto;
     margin-top: 30px;
@@ -148,7 +148,7 @@ input[type="radio"]:checked ~ label{
 }
 
 div.send{
-    background-color: rgba(0, 125, 134, 0.993);
+    background-color: rgba(0, 125, 134, 0);
     display: block;
     width: 100%;
     height: max-content;
@@ -174,9 +174,9 @@ div.send{
 }
 
 .send input:hover{
-    background-color: rgba(0, 0, 0, 0.623);
+    background-color: rgb(0, 0, 0);
     box-shadow: 0px 1px 10px cyan,
-    inset 0px 1px 35px white;
+    0px 1px 35px white;
 
     color: white;
 
@@ -185,9 +185,10 @@ div.send{
 
 .result{
     display: block;
-    width: 100%;
-    height: 50px;
+    width: 95%;
+    height: max-content;
     margin: auto;
+    margin-bottom: 30px;
     text-align: center;
 
     border-radius: 10px;

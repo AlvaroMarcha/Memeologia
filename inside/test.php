@@ -53,22 +53,22 @@ require "../back/functions.php";
     <main>
         <div class="container">
             <h1>TESTS</h1>
-            <div class="principal">
-                <details open>
+            <div class="principal unop">
+                <details>
                     <summary class="one">Principiantes</summary>
-                    <div class="links" id="one">
+                    <div class="links links-one" id="one">
                         <a href="./tests/principiante-nivel-1.php">Nivel 1</a>
                         <a href="./tests/principiante-nivel-2.php">Nivel 2</a>
                         <a href="./tests/principiante-nivel-3.php">Nivel 3</a>
-                        <a href="./tests/principiante-nivel-3.php">Nivel 4</a>
+                        <a href="./tests/principiante-nivel-4.php">Nivel 4</a>
                     </div>
 
                 </details>
             </div>
             <div class="principal">
-                <details open>
+                <details>
                     <summary class="two">Intermedio</summary>
-                    <div class="links" id="two">
+                    <div class="links links-two" id="two">
                         <a href="">Nivel 1</a>
                         <a href="">Nivel 2</a>
                         <a href="">Nivel 4</a>
@@ -78,9 +78,34 @@ require "../back/functions.php";
                 </details>
             </div>
             <div class="principal">
-                <details open>
+                <details>
                     <summary class="three">🌮mplicado</summary>
-                    <div class="links" id="three">
+                    <div class="links links-three" id="three">
+                        <a href="">Nivel 1</a>
+                        <a href="">Nivel 2</a>
+                        <a href="">Nivel 3</a>
+                        <a href="">Nivel 4</a>
+                    </div>
+
+                </details>
+            </div>
+            <div class="principal lastp">
+                <details>
+                    <summary class="four">Master</summary>
+                    <div class="links links-four" id="four">
+                        <a href="">Nivel 1</a>
+                        <a href="">Nivel 2</a>
+                        <a href="">Nivel 3</a>
+                        <a href="">Nivel 4</a>
+                    </div>
+
+                </details>
+            </div>
+            <hr>
+            <div class="principal">
+                <details>
+                    <summary class="negroP"><span class="negro">Humor negro</span></summary>
+                    <div class="links links-four">
                         <a href="">Nivel 1</a>
                         <a href="">Nivel 2</a>
                         <a href="">Nivel 3</a>
@@ -90,9 +115,17 @@ require "../back/functions.php";
                 </details>
             </div>
             <div class="principal">
-                <details open>
-                    <summary class="four">Master</summary>
-                    <div class="links" id="four">
+                <details>
+                    <summary class="lgtb">
+                        <span class="L">L</span>
+                        <span class="G">G</span>
+                        <span class="T">T</span>
+                        <span class="B">B</span>
+                        <span class="I">I</span>
+                        <span class="Q">Q</span>
+                        <span class="plus">+</span>
+                    </summary>
+                    <div class="links links-four">
                         <a href="">Nivel 1</a>
                         <a href="">Nivel 2</a>
                         <a href="">Nivel 3</a>
@@ -105,40 +138,6 @@ require "../back/functions.php";
 
 
     </main>
-    <aside>
-        <div>
-            <details>
-                <summary>Humor negro</summary>
-                <div>
-                    <a href="">Nivel 1</a>
-                    <a href="">Nivel 2</a>
-                    <a href="">Nivel 3</a>
-                    <a href="">Nivel 4</a>
-                </div>
-
-            </details>
-        </div>
-        <div>
-            <details>
-                <summary>LGTBIQ+</summary>
-                <div>
-                    <form action="">
-                        <select name="lgtb" id="">
-                            <option value="0" selected>SELECCIONA</option>
-                            <option value="1">Nivel 1-+</option>
-                            <option value="2">Nivel 1-*</option>
-                        </select>
-                        <input type="submit" value="seleccionar">
-                    </form>
-                    <a href="">Nivel 2</a>
-                    <a href="">Nivel 3</a>
-                    <a href="">Nivel 4</a>
-                </div>
-
-            </details>
-        </div>
-    </aside>
-
     <script src="../js/menu.js"></script>
     <script>
     var cinco = getElementById("5");
@@ -173,7 +172,22 @@ require "../back/functions.php";
     </script>
 
     <footer>
-        <p>Footer</p>
+        <div class="social">
+            <div class="insta">
+                <a href=""><img src="../assets/icons/instagram-icon.png" alt="" width="50px"></a><br>
+                <span>alan.vicent8494</span>
+            </div>
+            <div class="twitter">
+                <a href=""><img src="../assets/icons/twitter-icon.png" alt="" width="50px"></a><br>
+                <span>alan.vicent8494</span>
+            </div>
+        </div>
+        <div class="colab">
+            <p>Colaborar en la página <a href="#">Contáctame</a></p>
+        </div>
+        <div class="final-footer">
+            Creado por alguien que sabe mucho de memes <br> MEMEOLOGIA 2022 &copy;
+        </div>
     </footer>
 </body>
 
