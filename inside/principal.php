@@ -29,6 +29,11 @@ $statuss=getStatus();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
     <link rel="stylesheet" href="../assets/css/global.css">
     <link rel="stylesheet" href="../assets/css/style.header.css">
     <link rel="stylesheet" href="../assets/css/style.inside.principal.css">
@@ -110,7 +115,7 @@ $statuss=getStatus();
         <div id="nav-links">
             <a href="#" id="1">Perfil</a>
             <a href="test.php" id="2">Tests</a>
-            <a href="nosotros.php" id="3">Ranking Global</a>
+            <a href="ranking.php" id="3">Ranking Global</a>
             <a href="config.php" id="4">Configuración</a>
             <a href="../back/close-session.php" id="5">Cerrar sesión</a>
             <a href="#" onclick="closeMenu()" id="last"><img src="../assets/icons/flechaArriba.png" alt="" width="30px">
@@ -119,7 +124,7 @@ $statuss=getStatus();
         <div id="nav-links-desktop">
             <a href="#" id="1">Perfil</a>
             <a href="test.php" id="2">Tests</a>
-            <a href="nosotros.php" id="3">Ranking Global</a>
+            <a href="ranking.php" id="3">Ranking Global</a>
             <a href="config.php" id="4">Configuración</a>
             <a href="../back/close-session.php" id="4"><img src="../assets/icons/sesion-close.png" width="30px"></a>
             </a>

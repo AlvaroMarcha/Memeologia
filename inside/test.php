@@ -35,7 +35,7 @@ require "../back/functions.php";
         <div id="nav-links">
             <a href="principal.php" id="1">Perfil</a>
             <a href="#" id="2">Tests</a>
-            <a href="nosotros.php" id="3">Ranking Global</a>
+            <a href="ranking.php" id="3">Ranking Global</a>
             <a href="config.php" id="4">Configuración</a>
             <a href="../back/close-session.php" id="5">Cerrar sesión</a>
             <a href="#" onclick="closeMenu()" id="last"><img src="../assets/icons/flechaArriba.png" alt="" width="30px">
@@ -44,7 +44,7 @@ require "../back/functions.php";
         <div id="nav-links-desktop">
             <a href="principal.php" id="1">Perfil</a>
             <a href="#" id="2">Tests</a>
-            <a href="nosotros.php" id="3">Ranking Global</a>
+            <a href="ranking.php" id="3">Ranking Global</a>
             <a href="config.php" id="4">Configuración</a>
             <a href="../back/close-session.php" id="4"><img src="../assets/icons/sesion-close.png" width="30px"></a>
             </a>

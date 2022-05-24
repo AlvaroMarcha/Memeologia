@@ -322,15 +322,28 @@ function getRankTable()
 
     $i = 1;
     foreach ($results as $value) {
-        echo '
+        if($i%2==0){
+            echo '
 
-            <tr>
+            <tr class="blue">
                 <td>'.$i.'</td>
                 <td>'.$value['user'].'</td>
                 <td>'.$value['experience'].'</td>
             </tr>
 
         ';
+
+        }else{
+            echo '
+
+            <tr class="darkBlue">
+                <td>'.$i.'</td>
+                <td>'.$value['user'].'</td>
+                <td>'.$value['experience'].'</td>
+            </tr>
+
+        ';
+        }
         $i++;
     }
 
