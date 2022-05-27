@@ -45,3 +45,55 @@ Establecer que tipos de permisos tienen los administradores
 
 
  - (aa) Todos los permisos
+
+
+
+
+ Consola de administracion para los diferentes apartados
+ LISTAS:
+    - Notificaciones:
+
+    - Estado web:
+        - Version de PHP
+        
+    - Usuarios:
+        - Lista de todos los usuarios para poder gestionarlos
+            - Restablecer contraseña
+            - Restablecer email
+            - Enviar email a un usuario.
+            
+    - Soporte:
+        - Mensajes para soporte para poder gestionar problemas de los usuarios.
+
+SEGURIDAD:
+    - Administradores:
+        - Gestionar todos los administradores
+            - Crear
+            - Eliminar 
+            - Modificar 
+            - Generar contraseñas para admins
+
+BANDEJA:
+    -Mensajes
+        - Aun por desarrollar
+
+TIENDA:
+    - Crear:
+        - Se podran crear nuevos articulos
+    - Modificar: 
+        - Se podran modificar articulos existentes
+    - Eliminar: 
+        - Se podran eliminar articulos
+    - Regalar a:
+        - Se podran hacer regalos a los usuarios
+            - Memepoints (Por ahora.)
+
+DB:
+    - Visualizar consola:
+        - Datos sobre las bases de datos. 
+            - Link y credenciales para administrar desde aqui.
+
+EDIT:
+    - HEADER:
+        Poder modificar el Header
+    

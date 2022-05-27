@@ -155,7 +155,9 @@
                     ?>
                         <?php  echo $tag; ?>
                     </div>
-                    <a href="">Encima no te acuerdas de tu usuario? </br> Ah perro no traes el Onmitrix</a>
+                    <div class="mas-r">
+                        <a href="">Encima no te acuerdas de tu usuario? </br> Ah perro no traes el Onmitrix</a>
+                    </div>
             </form>
         </div>
 

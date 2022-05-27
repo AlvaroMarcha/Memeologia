@@ -179,6 +179,54 @@ textarea::placeholder{
 }
 
 
+.mas{
+    display:block;
+    width: 80%;
+    height:max-content;
+    margin: 0 auto;
+    text-align: center;
+
+    /* background-color:red; */
+
+}
+
+.mas a{
+    color: white;
+
+}
+
+.mas a:first-child:hover{
+    color: rgba(255, 136, 0, 0.822);
+
+}
+
+.mas a:last-child:hover{
+    color: rgba(30, 180, 0, 0.918);
+
+}
+
+/* -------------------- */
+.mas-r{
+    display:block;
+    width: 80%;
+    height:max-content;
+    margin: 0 auto;
+    text-align: center;
+
+    /* background-color:red; */
+
+}
+
+.mas-r a{
+    color: white;
+
+}
+
+.mas-r a:first-child:hover{
+    color: rgba(255, 0, 0, 0.822);
+
+}
+
 
 
 /* Estilos de Escritorio */

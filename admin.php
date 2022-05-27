@@ -57,13 +57,13 @@
                         $pass = $_POST['pass'];
                         if (!empty($user) && !empty($pass)) {
                             //Ahora hacemos la comparacion
-                            // if (existLogin($user, $pass)) {
-                            //     header("location: inside/principal.php?user=$user");
+                            if (existAdmin()) {
+                                header("location: inside/back-office/principal.php");
 
-                            // } else {
-                            //     $status = "Credenciales incorrectas. Sino puedes entrar ponte en contacto con @alan.vicent8494";
-                            //     $tag="<p class='incorrectas'>$status</p>";
-                            // }
+                            } else {
+                                $status = "Credenciales incorrectas. Sino puedes entrar ponte en contacto con @alan.vicent8494";
+                                $tag="<p class='incorrectas'>$status</p>";
+                            }
                         } else {
                             $status = "Debes rellenar todos los campos";
                             $tag="<p class='rellena'>$status</p>";

@@ -714,6 +714,14 @@ function setAdminPass($userAdmin){
     $GLOBALS['status'] = "Admin password has been registered and sent";
 }
 
+//Function to verify user admin credentials
+function existAdmin(){
+    $bool=true;
+
+    return $bool;
+
+}
+
 
 
 

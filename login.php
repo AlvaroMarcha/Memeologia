@@ -49,7 +49,7 @@
                 <div class="button">
                     <button type="submit" name="enviar">Entrar</button>
                     <div class="status" id="form">
-                    <?php
+                        <?php
                     $tag="";
                     if (isset($_POST['enviar'])) {
                         //Recuperamos las variables
@@ -76,8 +76,10 @@
                     ?>
                         <?php  echo $tag; ?>
                     </div>
-                    <a href="recovery.php">No mames lalo, ¿perdiste la contraseña?</a><br>
-                    <a href="admin.php">¿Eres administrador?</a>
+                    <div class="mas">
+                        <a href="recovery.php">No mames lalo, ¿perdiste la contraseña?</a><br>
+                        <a href="admin.php">¿Eres administrador?</a>
+                    </div>
             </form>
         </div>
     </main>

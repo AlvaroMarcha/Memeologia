@@ -1,0 +1,176 @@
+*{
+    box-sizing: border-box;
+
+}
+
+body{
+    background-color: rgb(255, 255, 255);
+
+}
+
+header{
+    display: grid;
+    grid-template-columns: 90% 10%;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    'pwd exit'
+    ;
+
+    width: 95%;
+    height: 50px;
+    margin: 0 auto;
+
+    border: 3px solid black;
+    border-radius: 5px;
+
+}
+
+main{
+    display: block;
+    width: 95%;
+    height: 80vh;
+    margin: 0 auto;
+
+    border: 1px solid rgb(255, 255, 255);
+    background: linear-gradient(black, rgb(6, 89, 184));
+
+}
+
+main .content-list{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items:center;
+    flex-grow: 1;
+     
+    width: 95%;
+    height: 65px;
+    margin: 0 auto;
+
+    margin-top:10px;
+
+    border: 4px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    background-color: rgb(156, 90, 4);
+}
+
+main .content-list div{
+    border: 1px solid rgb(255, 255, 255);
+    margin: 1px;
+
+    border-radius: 4px;
+}
+
+main .content-list img{
+    width: 47px;
+
+}
+
+/* CONTENT */
+main .content{
+    margin-top:10px;
+    border-radius: 10px;
+    
+    
+}
+
+main .content div{
+    display:grid;
+    grid-template-columns: 89% 11%;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    'title icon'
+    ;
+
+
+    width: 95%;
+    height: 60px;
+    margin: 0 auto;
+
+    border: 1px solid rgb(0, 0, 0);
+    background: linear-gradient(rgb(255, 255, 255), rgba(207, 204, 204, 0.842));
+    padding-top: 15px;
+
+    border-radius: 4px;
+
+    transition:all 1s cubic-bezier(0.23, 1, 0.320, 1);
+
+}
+
+main .content div:hover{
+    background: linear-gradient(rgba(32, 195, 201, 0.938), rgba(207, 204, 204, 0.842));
+}
+
+a.title{
+    grid-area: title;
+
+    text-decoration:none;
+    color: rgb(0, 153, 255);
+    font-family: monospace;
+    font-size: 20px;
+    margin-left: 20px;
+
+    transition:all 0.5s ease;
+    
+
+}
+
+a.title:hover{
+    color:white;
+}
+
+main .content div img{
+    grid-area: icon;
+
+    margin-top: -10px;
+    margin-left: -15px;
+
+}
+
+footer{
+    display: block;
+    width: 95%;
+    height: 10vh;
+    margin: 0 auto;
+
+    border: 1px solid black;
+    text-align: center;
+    background-color:rgba(3, 111, 161, 0.74);
+
+}
+
+footer p{
+    color: white;
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+
+/* Otros */
+.pwd{
+    grid-area: pwd;
+    margin-left: 10px;
+    color: rgb(0, 0, 0);
+
+}
+
+.pwd span{
+    color: rgb(0, 132, 255);
+    font-weight:bolder;
+    font-family: monospace;
+    font-size:18px;
+
+}
+
+.exit{
+    grid-area: exit;
+    
+
+}
+
+.exit img{
+    margin-top:5px;
+    width: 38px;
+
+}
