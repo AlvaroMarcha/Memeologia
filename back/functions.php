@@ -21,10 +21,6 @@ $user = "";
 //Method getConnection()
 function getConnection()
 {
-    // $host="localhost";
-    // $dbname="u917976464_memeologia";
-    // $username="u917976464_memeologo";
-    // $pass="Chalatenang01994";
     $host="localhost";
     $dbname="memeologia";
     $username="root";
